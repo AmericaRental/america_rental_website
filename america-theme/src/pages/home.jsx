@@ -1,11 +1,14 @@
 import React from "react";
+import Banner from "../components/banner";
 import Header from "../components/header";
 
 function Home() {
   return (
     <>
       <Header />
-      <main></main>
+      <main>
+        <Banner />
+      </main>
     </>
   );
 }
