@@ -16,13 +16,13 @@ const StyledHeader = styled.header`
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  padding: 0.5rem 0px;
-  box-shadow: 0 7px 7px -5px #00000071;
+  padding: 0.75rem 0px;
+  box-shadow: 0 7px 7px -5px #00000088;
 `;
 
 const SocialHeader = styled.section`
   background-color: #143955;
-  height: 40px;
+  height: 30px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -34,7 +34,7 @@ const SocialHeader = styled.section`
 const LogoAmerica = styled.img`
   width: 18%;
   height: auto;
-  margin: 0px 0.8rem;
+  margin: 0px 6%;
 `;
 LogoAmerica.defaultProps = {
   src: vetor_logo_america_colorido,
@@ -90,31 +90,31 @@ export default class Header extends React.Component {
       <>
         {/* mídias sociais acima do header */}
         <SocialHeader>
-          <Div padding='3.4%'>
+          <Div padding='3%'>
             <Img src={email} alt="email" />
             <Paragraph cor="#FAFAFA" tamanho="1.05rem" padding="5px" font='Fira Sans'>
               vendas@americarental.com.br
             </Paragraph>
           </Div>
-          <Div padding='3.4%'>
+          <Div padding='3%'>
             <Img src={whatsapp} alt="whatsapp" />
             <Paragraph cor="#FAFAFA" tamanho="1.05rem" padding="5px" font='Fira Sans'>
               (11) 2499-3353
             </Paragraph>
           </Div>
-          <Div padding='3.4%'>
+          <Div padding='3%'>
             <Img src={facebook} alt="facebook" />
             <Paragraph cor="#FAFAFA" tamanho="1.05rem" padding="5px" font='Fira Sans'>
               /AmericaRental
             </Paragraph>
           </Div>
-          <Div padding='3.4%'>
+          <Div padding='3%'>
             <Img src={instagram} alt="instagram" />
             <Paragraph cor="#FAFAFA" tamanho="1.05rem" padding="5px" font='Fira Sans'>
               @america_rental
             </Paragraph>
           </Div>
-          <Div padding='3.4%'>
+          <Div padding='3%'>
             <Img src={linkedin} alt="Linkedin" />
             <Paragraph cor="#FAFAFA" tamanho="1.05rem" padding="5px" font='Fira Sans'>
               /AmericaRental

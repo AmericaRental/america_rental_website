@@ -9,7 +9,7 @@ const Img = styled.img`
   justify-content: center;
   align-items: center;
   background-color: #7a7a7a;
-  height: 400px;
+  height: 680px;
   object-fit: cover;
   object-position: 0% 35%;
 `;
