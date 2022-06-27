@@ -10,7 +10,7 @@ import whatsapp from "../images/whatsapp.svg";
 
 
 const StyledHeader = styled.header`
-  width: 100vw;
+  width: 100%;
   height: fit-content;
   display: flex;
   flex-direction: row;
@@ -23,7 +23,7 @@ const StyledHeader = styled.header`
 const SocialHeader = styled.section`
   background-color: #143955;
   height: 40px;
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-content: center;
