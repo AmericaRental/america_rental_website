@@ -5,6 +5,7 @@ import Carteira from "../components/carteira";
 import Diferenciais from "../components/diferenciais";
 import Footer from "../components/footer";
 import Header from "../components/header";
+import Slider from "../components/slider";
 import Vitrine from "../components/vitrine";
 
 
@@ -19,6 +20,7 @@ function Home() {
         <About />
         <Diferenciais />
         <Carteira />
+        <Slider />
       </main>
       <Footer />
     </>

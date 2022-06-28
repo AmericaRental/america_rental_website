@@ -1,25 +1,37 @@
 import React from "react";
-import styled from "styled-components";
-import Home_02 from "../images/Home_02.JPG";
+import banner1 from '../images/home_images/banner1.svg';
 
-const Img = styled.img`
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  background-color: #7a7a7a;
-  height: 680px;
-  object-fit: cover;
-  object-position: 0% 35%;
-`;
+import { Autoplay, Pagination, Navigation } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import "../css/style.css";
 
 export default class Banner extends React.Component {
   render() {
     return (
-      <>
-        <Img src={Home_02} />
-      </>
+      <Swiper
+          spaceBetween={0}
+          centeredSlides={true}
+          autoplay={{
+            autoplay: 1500,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Autoplay, Pagination, Navigation]}
+          className='banner'
+        >
+          <SwiperSlide className="bannerSwipe">
+            <img src={banner1} alt="logo parceiro" className="bannerImage"/>
+          </SwiperSlide>
+         
+        </Swiper>
     );
   }
 }

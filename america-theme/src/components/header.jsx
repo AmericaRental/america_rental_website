@@ -7,7 +7,7 @@ import facebook from "../images/facebook.svg";
 import instagram from "../images/instagram.svg";
 import linkedin from "../images/linkedin.svg";
 import whatsapp from "../images/whatsapp.svg";
-
+import { useNavigate } from "react-router-dom";
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -44,19 +44,16 @@ const Paragraph = styled.p`
   color: ${(props) => props.cor || "#000000"};
   font-size: ${(props) => props.tamanho || "1.25rem"};
   padding: ${(props) => props.padding || "0px"};
-  font-family: ${props => props.font || 'DM Sans'};
+  font-family: ${(props) => props.font || "DM Sans"};
 `;
-
 const Div = styled.div`
-  width: ${
-    props => props.size || 'max-content'
-  };
+  width: ${(props) => props.size || "max-content"};
   height: fit-content;
   display: flex;
   flex-direction: row;
-  justify-content: ${props => props.jContent || 'Center'};
+  justify-content: ${(props) => props.jContent || "Center"};
   align-items: center;
-  padding: ${props => props.padding || '0px'};
+  padding: ${(props) => props.padding || "0px"};
 `;
 
 const Img = styled.img`
@@ -65,76 +62,113 @@ const Img = styled.img`
 `;
 
 const Button = styled.button`
-    width: fit-content;
-    height: fit-content;
-    background-color: transparent;
-    color: #515151;
-    border: 2px solid transparent;
-    font-size: ${props => props.fontsize || '17px'};
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    transition: ease-in-out 500ms;
-    padding: 5px 10px;
-    &:hover { 
-      color: #1e547e;
-      transition: ease-in-out 250ms;
-      border: 2px solid #1e547e;
-      border-radius: 0.6rem;
-    }
+  width: fit-content;
+  height: fit-content;
+  background-color: transparent;
+  color: #515151;
+  border: 2px solid transparent;
+  font-size: ${(props) => props.fontsize || "17px"};
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  transition: ease-in-out 500ms;
+  padding: 5px 10px;
+  text-decoration: none;
+  text-decoration-line: none;
+  cursor: pointer;
+  &:hover {
+    color: #1e547e;
+    transition: ease-in-out 250ms;
+    border: 2px solid #1e547e;
+    border-radius: 0.6rem;
+  }
 `;
 
+function Header() {
+  let navigate = useNavigate();
+  return (
+    <>
+      {/* mídias sociais acima do header */}
+      <SocialHeader>
+        <Div padding="3%">
+          <Img src={email} alt="email" />
+          <Paragraph
+            cor="#FAFAFA"
+            tamanho="1.05rem"
+            padding="5px"
+            font="Fira Sans"
+          >
+            vendas@americarental.com.br
+          </Paragraph>
+        </Div>
+        <Div padding="3%">
+          <Img src={whatsapp} alt="whatsapp" />
+          <Paragraph
+            cor="#FAFAFA"
+            tamanho="1.05rem"
+            padding="5px"
+            font="Fira Sans"
+          >
+            (11) 2499-3353
+          </Paragraph>
+        </Div>
+        <Div padding="3%">
+          <Img src={facebook} alt="facebook" />
+          <Paragraph
+            cor="#FAFAFA"
+            tamanho="1.05rem"
+            padding="5px"
+            font="Fira Sans"
+          >
+            /AmericaRental
+          </Paragraph>
+        </Div>
+        <Div padding="3%">
+          <Img src={instagram} alt="instagram" />
+          <Paragraph
+            cor="#FAFAFA"
+            tamanho="1.05rem"
+            padding="5px"
+            font="Fira Sans"
+          >
+            @america_rental
+          </Paragraph>
+        </Div>
+        <Div padding="3%">
+          <Img src={linkedin} alt="Linkedin" />
+          <Paragraph
+            cor="#FAFAFA"
+            tamanho="1.05rem"
+            padding="5px"
+            font="Fira Sans"
+          >
+            /AmericaRental
+          </Paragraph>
+        </Div>
+      </SocialHeader>
 
-export default class Header extends React.Component {
-  render() {
-    return (
-      <>
-        {/* mídias sociais acima do header */}
-        <SocialHeader>
-          <Div padding='3%'>
-            <Img src={email} alt="email" />
-            <Paragraph cor="#FAFAFA" tamanho="1.05rem" padding="5px" font='Fira Sans'>
-              vendas@americarental.com.br
-            </Paragraph>
-          </Div>
-          <Div padding='3%'>
-            <Img src={whatsapp} alt="whatsapp" />
-            <Paragraph cor="#FAFAFA" tamanho="1.05rem" padding="5px" font='Fira Sans'>
-              (11) 2499-3353
-            </Paragraph>
-          </Div>
-          <Div padding='3%'>
-            <Img src={facebook} alt="facebook" />
-            <Paragraph cor="#FAFAFA" tamanho="1.05rem" padding="5px" font='Fira Sans'>
-              /AmericaRental
-            </Paragraph>
-          </Div>
-          <Div padding='3%'>
-            <Img src={instagram} alt="instagram" />
-            <Paragraph cor="#FAFAFA" tamanho="1.05rem" padding="5px" font='Fira Sans'>
-              @america_rental
-            </Paragraph>
-          </Div>
-          <Div padding='3%'>
-            <Img src={linkedin} alt="Linkedin" />
-            <Paragraph cor="#FAFAFA" tamanho="1.05rem" padding="5px" font='Fira Sans'>
-              /AmericaRental
-            </Paragraph>
-          </Div>
-        </SocialHeader>
+      <StyledHeader>
+        <LogoAmerica />
+        <Div jContent="space-evenly" size="40%">
+          <Button
+            fontsize="1.25rem"
+            onClick={() => navigate("/", { replace: true })}
+          >
+            Home
+          </Button>
 
-        {/* Header  */}
-        <StyledHeader>
-          <LogoAmerica />
-          {/* menu */}
-          <Div jContent="space-evenly" size='40%'>
-            <Button fontsize='1.25rem'>Home</Button>
-            <Button fontsize='1.25rem'>Quem Somos</Button>
-            <Button fontsize='1.25rem'>Orçamento</Button>
-            <Button fontsize='1.25rem'>Produtos</Button>
-            <Button fontsize='1.25rem'>Contato</Button>
-          </Div>
-        </StyledHeader>
-      </>
-    );
-  }
+          <Button
+            fontsize="1.25rem"
+            onClick={() => navigate("/about", { replace: true })}
+          >
+            Quem Somos
+          </Button>
+          <Button fontsize="1.25rem">Orçamento</Button>
+          <Button fontsize="1.25rem">Produtos</Button>
+          <Button fontsize="1.25rem">Contato</Button>
+        </Div>
+      </StyledHeader>
+    </>
+  );
 }
+
+export default Header;
