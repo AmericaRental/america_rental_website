@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-import email from "../images/email.svg";
-import facebook from "../images/facebook.svg";
-import instagram from "../images/instagram.svg";
-import linkedin from "../images/linkedin.svg";
-import whatsapp from "../images/whatsapp.svg";
+import email from "../../images/email.svg";
+import facebook from "../../images/facebook.svg";
+import instagram from "../../images/instagram.svg";
+import linkedin from "../../images/linkedin.svg";
+import whatsapp from "../../images/whatsapp.svg";
 
 export default class Footer extends Component {
   render() {
@@ -58,6 +58,7 @@ export default class Footer extends Component {
     const Grid = styled.div`
       display: flex;
       flex-wrap: wrap;
+      justify-content:start;
     `;
 
     const HR = styled.hr`
@@ -98,9 +99,9 @@ export default class Footer extends Component {
     `;
 
     const Img = styled.img`
-      width: 50px;
+      width: 37px;
       height: 50px;
-      margin: 1rem 2rem;
+      margin: 0.6rem 2rem;
     `;
     return (
       <Footer>

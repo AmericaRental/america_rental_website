@@ -1,5 +1,5 @@
 import React from "react";
-import banner1 from '../images/home_images/banner1.svg';
+import banner1 from '../../images/home_images/banner1.svg';
 
 import { Autoplay, Pagination, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import "../css/style.css";
+import "../../css/style.css";
 
 export default class Banner extends React.Component {
   render() {

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-import certification from "../images/certification.svg";
-import headset from '../images/headset.svg';
-import environment from '../images/environment.svg'
+import certification from "../../images/certification.svg";
+import headset from '../../images/headset.svg';
+import environment from '../../images/environment.svg'
 
 export default class Diferenciais extends Component {
   render() {

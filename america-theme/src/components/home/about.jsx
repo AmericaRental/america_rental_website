@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import funcionarios from "../images/funcionarios.svg";
+import funcionarios from "../../images/funcionarios.svg";
 
 const Div = styled.div`
   width: 100%;

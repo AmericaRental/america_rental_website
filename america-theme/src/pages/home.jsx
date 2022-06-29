@@ -1,12 +1,12 @@
 import React from "react";
-import About from "../components/about";
-import Banner from "../components/banner";
-import Carteira from "../components/carteira";
-import Diferenciais from "../components/diferenciais";
-import Footer from "../components/footer";
-import Header from "../components/header";
-import Slider from "../components/slider";
-import Vitrine from "../components/vitrine";
+import About from "../components/home/about";
+import Banner from "../components/home/banner";
+import Carteira from "../components/home/carteira";
+import Diferenciais from "../components/home/diferenciais";
+import Footer from "../components/global/footer";
+import Header from "../components/global/header";
+import Slider from "../components/home/slider";
+import Vitrine from "../components/home/vitrine";
 
 
 function Home() {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-import bubbles from "../images/bubbles.svg";
+import bubbles from "../../images/bubbles.svg";
 export default class Carteira extends Component {
   render() {
     const Section = styled.section`
