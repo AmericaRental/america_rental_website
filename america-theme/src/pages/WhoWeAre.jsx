@@ -63,7 +63,7 @@ const WhoWeAre = () => {
     line-height: 33.4px;
   `;
 
-  const Structure = styled.div`
+  const Structure = styled.section`
     width: 100%;
     padding: 20%;
     background-color: #f5f5f5;  
