@@ -63,7 +63,12 @@ const WhoWeAre = () => {
     line-height: 33.4px;
   `;
 
-  
+  const Structure = styled.div`
+    width: 100%;
+    padding: 20%;
+    background-color: #f5f5f5;  
+  `;
+
   return (
     <>
       <Header />
@@ -84,6 +89,7 @@ const WhoWeAre = () => {
           </P>
           <Img src={bubbles} alt="eventos" width='70%' zindex='0' position='inherit' margin='30px 0'/>
         </NossaEmpresa>
+        <Structure></Structure> 
       </main>
       <Footer />
     </>
