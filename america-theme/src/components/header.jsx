@@ -62,24 +62,24 @@ const Img = styled.img`
 `;
 
 const Button = styled.button`
-  width: fit-content;
+  width: 300px;
   height: fit-content;
   background-color: transparent;
   color: #515151;
-  border: 2px solid transparent;
   font-size: ${(props) => props.fontsize || "17px"};
   font-family: "Inter", sans-serif;
-  font-weight: 400;
-  transition: ease-in-out 500ms;
-  padding: 5px 10px;
+  font-weight: 300;
+  transition: cubic-bezier(0.88, 0.15, 0.49, 1.05) 300ms;
   text-decoration: none;
+  border: none;
   text-decoration-line: none;
   cursor: pointer;
   &:hover {
     color: #1e547e;
-    transition: ease-in-out 250ms;
-    border: 2px solid #1e547e;
-    border-radius: 0.6rem;
+    transition: cubic-bezier(0.88, 0.15, 0.49, 1.05) 300ms;
+    font-weight: 700;
+    font-size: calc(${(props) => props.fontsize || "17px"} + 5%);
+    filter: drop-shadow(-1px 6px 20px #1439556f);
   }
 `;
 

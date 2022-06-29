@@ -9,6 +9,7 @@ const Div = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 1rem;
 `;
 
 const P = styled.p`
@@ -21,14 +22,16 @@ const P = styled.p`
   text-align: center;
   line-height: 35px;
 `;
+
 const H1 = styled.h1`
   font-family: ${(props) => props.family || "Inter"};
   font-size: 40px;
-  text-decoration-line: underline;
+  /* text-decoration-line: underline; */
   color: #143955;
   line-height: 52px;
   margin-bottom: 31px;
 `;
+
 const H2 = styled.h2`
   font-family: ${(props) => props.family || "Inter"};
   font-weight: 700;
@@ -57,7 +60,7 @@ export default class About extends Component {
   render() {
     return (
       <Div>
-        <P family="Open Sans">nós somos a</P>
+        <P family="Open Sans">Nós somos a</P>
         <H1 family="DM Sans">América Rental</H1>
         <H2>Sobre Nossa Empresa</H2>
         <P mt="8px" width="1010px" size="26px">
