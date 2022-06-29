@@ -8,15 +8,15 @@ import instagram from "../../images/instagram.svg";
 import linkedin from "../../images/linkedin.svg";
 import whatsapp from "../../images/whatsapp.svg";
 import { useNavigate } from "react-router-dom";
+import { menuItems } from "../../menu_itens";
 
 const StyledHeader = styled.header`
   width: 100%;
-  height: fit-content;
+  height: 89px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
-  padding: 0.75rem 0px;
+  justify-content: center;
   box-shadow: 0 7px 7px -5px #00000088;
 `;
 
@@ -32,9 +32,9 @@ const SocialHeader = styled.section`
 `;
 
 const LogoAmerica = styled.img`
-  width: 18%;
+  width: 350px;
   height: auto;
-  margin: 0px 6%;
+  margin: 0px 2.5% 0px 1.5%;
 `;
 LogoAmerica.defaultProps = {
   src: vetor_logo_america_colorido,
@@ -48,12 +48,13 @@ const Paragraph = styled.p`
 `;
 const Div = styled.div`
   width: ${(props) => props.size || "max-content"};
-  height: fit-content;
+  height: max-content;
   display: flex;
   flex-direction: row;
   justify-content: ${(props) => props.jContent || "Center"};
   align-items: center;
   padding: ${(props) => props.padding || "0px"};
+  margin: ${(props) => props.margin || "0px"};
 `;
 
 const Img = styled.img`
@@ -62,7 +63,7 @@ const Img = styled.img`
 `;
 
 const Button = styled.button`
-  width: 300px;
+  width: 130px;
   height: fit-content;
   background-color: transparent;
   color: #515151;
@@ -147,24 +148,48 @@ function Header() {
       </SocialHeader>
 
       <StyledHeader>
-        <LogoAmerica />
-        <Div jContent="space-evenly" size="40%">
-          <Button
-            fontsize="1.25rem"
-            onClick={() => navigate("/", { replace: true })}
-          >
-            Home
-          </Button>
-
-          <Button
-            fontsize="1.25rem"
-            onClick={() => navigate("/about", { replace: true })}
-          >
-            Quem Somos
-          </Button>
-          <Button fontsize="1.25rem">Orçamento</Button>
-          <Button fontsize="1.25rem">Produtos</Button>
-          <Button fontsize="1.25rem">Contato</Button>
+        <Div jContent="space-around" size="85%">
+          <LogoAmerica />
+          <Div jContent="space-between" margin="0" size="39%">
+            {menuItems.map((menu, index) => {
+              return menu.submenu ? (
+                <>
+                  <Button
+                    fontsize="1.15rem"
+                    key={index}
+                    onClick={() =>
+                      menu.url.length > 0
+                        ? navigate(menu.url, { replace: true })
+                        : console.log("")
+                    }
+                    aria
+                  >
+                    {menu.title}
+                  </Button>
+                  <div>
+                    <ul key={index}>
+                      {menu.submenu.map((submenu, index) => {
+                        return <li key={index}>{submenu.title}</li>;
+                      })}
+                    </ul>
+                  </div>
+                </>
+              ) : (
+                <Button
+                  fontsize="1.15rem"
+                  key={index}
+                  onClick={() =>
+                    menu.url.length > 0
+                      ? navigate(menu.url, { replace: true })
+                      : console.log("")
+                  }
+                  aria
+                >
+                  {menu.title}
+                </Button>
+              );
+            })}
+          </Div>
         </Div>
       </StyledHeader>
     </>

@@ -76,6 +76,7 @@ const WhoWeAre = () => {
     letter-spacing: 0.02em;
     line-height: 33.4px;
     margin: ${(props) => props.margin || "0"};
+    text-align: justify;
   `;
 
   const Section = styled.section`
