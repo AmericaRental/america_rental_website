@@ -1,10 +1,18 @@
 ::-webkit-scrollbar {
   width: 0.5rem;
-  background-color: transparent;
-  border-left: .5px solid #14395534;
+  background-color: rgba(255, 255, 255, 0);
+  /* border-left: .5px solid #14395534; */
+  position: absolute;
+  z-index: 9999999999999;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #143955;
-  border-radius: 1rem;
+  /* border-radius: 1rem; */
+  position: absolute;
+  z-index: 9999999999999;
+}
+
+body{ 
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 500ms;
 }

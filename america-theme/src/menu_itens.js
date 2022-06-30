@@ -2,10 +2,12 @@ export const menuItems = [
   {
     title: "Home",
     url: "/",
+    submenu: null
   },
   {
     title: "Quem somos",
     url: "/about",
+    submenu: null
   },
   {
     title: "Produtos",
@@ -36,5 +38,6 @@ export const menuItems = [
   {
     title: "Contato",
     url: "/",
+    submenu: null
   },
 ];
