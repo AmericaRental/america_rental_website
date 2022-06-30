@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import vetor_logo_america_colorido from "../../images/vetor_logo_america_colorido.svg";
@@ -92,15 +92,30 @@ export default class Header extends React.Component {
     };
 
     this.showMenu = this.showMenu.bind(this);
+    this.closeMenu = this.closeMenu.bind(this);
   }
 
   showMenu(event) {
     event.preventDefault();
 
-    this.setState({
-      showMenu: true,
-    });
-    console.log('clicou');
+    this.setState(
+      {
+        showMenu: true,
+      } /*
+      () => {
+        document.addEventListener("click", this.closeMenu);
+      }*/
+    );
+    console.log(this.state.showMenu);
+  }
+
+  closeMenu() {
+    this.setState(
+      { showMenu: false } /* () => {
+      document.removeEventListener("click", this.closeMenu);
+    }*/
+    );
+    console.log(this.state.showMenu);
   }
 
   render() {
@@ -171,24 +186,28 @@ export default class Header extends React.Component {
             <Div jContent="space-between" margin="0" size="39%">
               {menuItems.map((menu, index) => {
                 return (
-                  <Button key={index} {...menu.submenu ? onclick=this.showMenu : null}>
+                  <Button
+                    key={index}
+                    {...(menu.submenu
+                      ? (onclick = this.state.showMenu
+                          ? this.closeMenu
+                          : this.showMenu)
+                      : null)}
+                  >
                     {menu.title}
                   </Button>
                 );
               })}
-              {
-                this.state.showMenu ?
-                (
-                  <div>
-                    <button>item 1</button>
-                    <button>item 2</button>
-                    <button>item 3</button>
-                  </div>
-                ) : null
-              }
             </Div>
           </Div>
         </StyledHeader>
+        {this.state.showMenu ? (
+          <div>
+            <button>item 1</button>
+            <button>item 2</button>
+            <button>item 3</button>
+          </div>
+        ) : null}
       </>
     );
   }
