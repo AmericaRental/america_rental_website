@@ -8,6 +8,7 @@ import instagram from "../../images/instagram.svg";
 import linkedin from "../../images/linkedin.svg";
 import whatsapp from "../../images/whatsapp.svg";
 import { menuItems } from "../../menu_itens";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
   const [menuvisible, setMenuvisible] = useState(false);
@@ -21,6 +22,8 @@ function Header() {
       ? (document.body.style.overflow = "hidden")
       : (document.body.style.overflow = "overlay");
   }, [menuvisible]);
+
+  const navigate = useNavigate();
 
   const StyledHeader = styled.header`
     width: 100%;
@@ -215,12 +218,7 @@ function Header() {
 
       <Menu>
           <Content>
-            <a
-              href="https://www.youtube.com/watch?v=lIkNk-zbp3g"
-              target={"_blank"}
-            >
-              item 1
-            </a>
+            <button onClick={() => navigate('/produtos/quimicos', {replace: true})}> químicos </button>
             <HorizontalHR />
             <a href="#" target={"_blank"}>item 2</a>
             <HorizontalHR />

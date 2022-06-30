@@ -18,7 +18,7 @@ const Router = (_) => {
         <reactRouter.Route exact path="/" element={<Home />} />
         <reactRouter.Route exact path="/about" element={<WhoWeAre />} />
         {/* todo */}
-        <reactRouter.Route exact path="/produtos" element={<Produtos />} />
+        {/* <reactRouter.Route exact path="/produtos" element={<Produtos />} /> */}
         <reactRouter.Route
           exact
           path="/produtos/quimicos"

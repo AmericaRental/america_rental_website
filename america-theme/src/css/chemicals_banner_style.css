@@ -1,0 +1,23 @@
+.bannerSwipe {
+  width: 80%;
+  height: max-content;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bannerSwipe > img {
+  width: 500px;
+  height: auto;
+  object-fit: scale-down;
+}
+.swiper {
+  width: 90%;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
