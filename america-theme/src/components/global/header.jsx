@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import vetor_logo_america_colorido from "../../images/vetor_logo_america_colorido.svg";
@@ -7,7 +7,6 @@ import facebook from "../../images/facebook.svg";
 import instagram from "../../images/instagram.svg";
 import linkedin from "../../images/linkedin.svg";
 import whatsapp from "../../images/whatsapp.svg";
-import { useNavigate } from "react-router-dom";
 import { menuItems } from "../../menu_itens";
 
 const StyledHeader = styled.header`
@@ -84,116 +83,113 @@ const Button = styled.button`
   }
 `;
 
-function Header() {
-  let navigate = useNavigate();
-  return (
-    <>
-      {/* mídias sociais acima do header */}
-      <SocialHeader>
-        <Div padding="3%">
-          <Img src={email} alt="email" />
-          <Paragraph
-            cor="#FAFAFA"
-            tamanho="1.05rem"
-            padding="5px"
-            font="Fira Sans"
-          >
-            vendas@americarental.com.br
-          </Paragraph>
-        </Div>
-        <Div padding="3%">
-          <Img src={whatsapp} alt="whatsapp" />
-          <Paragraph
-            cor="#FAFAFA"
-            tamanho="1.05rem"
-            padding="5px"
-            font="Fira Sans"
-          >
-            (11) 2499-3353
-          </Paragraph>
-        </Div>
-        <Div padding="3%">
-          <Img src={facebook} alt="facebook" />
-          <Paragraph
-            cor="#FAFAFA"
-            tamanho="1.05rem"
-            padding="5px"
-            font="Fira Sans"
-          >
-            /AmericaRental
-          </Paragraph>
-        </Div>
-        <Div padding="3%">
-          <Img src={instagram} alt="instagram" />
-          <Paragraph
-            cor="#FAFAFA"
-            tamanho="1.05rem"
-            padding="5px"
-            font="Fira Sans"
-          >
-            @america_rental
-          </Paragraph>
-        </Div>
-        <Div padding="3%">
-          <Img src={linkedin} alt="Linkedin" />
-          <Paragraph
-            cor="#FAFAFA"
-            tamanho="1.05rem"
-            padding="5px"
-            font="Fira Sans"
-          >
-            /AmericaRental
-          </Paragraph>
-        </Div>
-      </SocialHeader>
+export default class Header extends React.Component {
+  constructor() {
+    super();
 
-      <StyledHeader>
-        <Div jContent="space-around" size="85%">
-          <LogoAmerica />
-          <Div jContent="space-between" margin="0" size="39%">
-            {menuItems.map((menu, index) => {
-              return menu.submenu ? (
-                <>
-                  <Button
-                    fontsize="1.15rem"
-                    key={index}
-                    onClick={() =>
-                      menu.url.length > 0
-                        ? navigate(menu.url, { replace: true })
-                        : console.log("")
-                    }
-                    aria
-                  >
+    this.state = {
+      showMenu: false,
+    };
+
+    this.showMenu = this.showMenu.bind(this);
+  }
+
+  showMenu(event) {
+    event.preventDefault();
+
+    this.setState({
+      showMenu: true,
+    });
+    console.log('clicou');
+  }
+
+  render() {
+    return (
+      <>
+        {/* mídias sociais acima do header */}
+        <SocialHeader>
+          <Div padding="3%">
+            <Img src={email} alt="email" />
+            <Paragraph
+              cor="#FAFAFA"
+              tamanho="1.05rem"
+              padding="5px"
+              font="Fira Sans"
+            >
+              vendas@americarental.com.br
+            </Paragraph>
+          </Div>
+          <Div padding="3%">
+            <Img src={whatsapp} alt="whatsapp" />
+            <Paragraph
+              cor="#FAFAFA"
+              tamanho="1.05rem"
+              padding="5px"
+              font="Fira Sans"
+            >
+              (11) 2499-3353
+            </Paragraph>
+          </Div>
+          <Div padding="3%">
+            <Img src={facebook} alt="facebook" />
+            <Paragraph
+              cor="#FAFAFA"
+              tamanho="1.05rem"
+              padding="5px"
+              font="Fira Sans"
+            >
+              /AmericaRental
+            </Paragraph>
+          </Div>
+          <Div padding="3%">
+            <Img src={instagram} alt="instagram" />
+            <Paragraph
+              cor="#FAFAFA"
+              tamanho="1.05rem"
+              padding="5px"
+              font="Fira Sans"
+            >
+              @america_rental
+            </Paragraph>
+          </Div>
+          <Div padding="3%">
+            <Img src={linkedin} alt="Linkedin" />
+            <Paragraph
+              cor="#FAFAFA"
+              tamanho="1.05rem"
+              padding="5px"
+              font="Fira Sans"
+            >
+              /AmericaRental
+            </Paragraph>
+          </Div>
+        </SocialHeader>
+
+        <StyledHeader>
+          <Div jContent="space-around" size="85%">
+            <LogoAmerica />
+            <Div jContent="space-between" margin="0" size="39%">
+              {menuItems.map((menu, index) => {
+                return (
+                  <Button key={index} {...menu.submenu ? onclick=this.showMenu : null}>
                     {menu.title}
                   </Button>
+                );
+              })}
+              {
+                this.state.showMenu ?
+                (
                   <div>
-                    <ul key={index}>
-                      {menu.submenu.map((submenu, index) => {
-                        return <li key={index}>{submenu.title}</li>;
-                      })}
-                    </ul>
+                    <button>item 1</button>
+                    <button>item 2</button>
+                    <button>item 3</button>
                   </div>
-                </>
-              ) : (
-                <Button
-                  fontsize="1.15rem"
-                  key={index}
-                  onClick={() =>
-                    menu.url.length > 0
-                      ? navigate(menu.url, { replace: true })
-                      : console.log("")
-                  }
-                  aria
-                >
-                  {menu.title}
-                </Button>
-              );
-            })}
+                ) : null
+              }
+            </Div>
           </Div>
-        </Div>
-      </StyledHeader>
-    </>
-  );
+        </StyledHeader>
+      </>
+    );
+  }
 }
-
-export default Header;

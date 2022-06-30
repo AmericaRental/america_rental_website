@@ -13,18 +13,23 @@ export const menuItems = [
     submenu: [
       {
         title: "Sanitário Químico",
+        url: '/'
       },
       {
         title: "Cabines Hidráulicas",
+        url: '/'
       },
       {
         title: "Pia Portátil",
+        url: '/'
       },
       {
         title: "Mictório Kros",
+        url: '/'
       },
       {
         title: "Guaritas",
+        url: '/'
       },
     ],
   },
