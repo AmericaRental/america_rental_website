@@ -14,6 +14,14 @@ import step2 from "../images/quimicos/step2.svg";
 import step3 from "../images/quimicos/step3.svg";
 import step4 from "../images/quimicos/step4.svg";
 
+import topper_a from "../images/quimicos/topper_a.svg";
+import img1a from "../images/quimicos/img1a.svg";
+import img2a from "../images/quimicos/img2a.svg";
+import img3a from "../images/quimicos/img3a.svg";
+import img4a from "../images/quimicos/img4a.svg";
+import img5a from "../images/quimicos/img5a.svg";
+import img6a from "../images/quimicos/img6a.svg";
+
 import "../css/chemicals_banner_style.css";
 import { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -30,11 +38,6 @@ function Quimicos() {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-  `;
-
-  const Img = styled.img`
-    width: 13%;
-    height: auto;
   `;
 
   const Container = styled.div`
@@ -54,6 +57,45 @@ function Quimicos() {
     line-height: 23px;
     text-align: justify;
   `;
+
+  const Topper = styled.img`
+    width: 100%;
+    height: auto;
+  `;
+
+  const Grid = styled.article`
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 auto;
+  `;
+
+  const GridItem = styled.div`
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 45%;
+    margin: 2.5%;
+  `;
+
+  const Img = styled.img`
+    width: ${(props) => props.width || "13%"};
+    height: ${(props) => props.width || "13%"};
+    transition: 600ms ease-in-out;
+    padding: 10px;
+  `;
+
+  const ImgGrid = styled.img`
+    width: 90%;
+    height: 90%;
+    transition: 400ms ease-in-out;
+    &:hover {
+      transform: scale(110%);
+    }
+  `;
   return (
     <>
       <Header />
@@ -67,7 +109,7 @@ function Quimicos() {
         </Container>
       </Produtos>
 
-      <Container width="82%" jcontent="center" margin='0 auto'>
+      <Container width="82%" jcontent="center" margin="0 auto">
         <Container
           width="83%"
           direction="row"
@@ -75,7 +117,12 @@ function Quimicos() {
           jcontent="center"
           margin="0 auto"
         >
-          <Container width="45%" direction="row" jcontent="space-evenly" margin='0 0% 0 0'>
+          <Container
+            width="45%"
+            direction="row"
+            jcontent="space-evenly"
+            margin="0 0% 0 0"
+          >
             <Swiper
               autoHeight={true}
               centeredSlides={true}
@@ -84,6 +131,7 @@ function Quimicos() {
                 disableOnInteraction: false,
               }}
               navigation={true}
+              className="SwiperChemical"
               modules={[Autoplay, Navigation]}
             >
               <SwiperSlide className="bannerSwipe">
@@ -100,17 +148,17 @@ function Quimicos() {
               </SwiperSlide>
             </Swiper>
           </Container>
-          <Container width="55%" padding='0 10px 0 0px'>
+          <Container width="55%" padding="0 10px 0 0px">
             <P>
               <strong>
                 Como o Banheiro Químico não está ligado na rede de esgoto ele
                 precisa ser higienizado, no mínimo, semanalmente (a depender do
                 número de usuários).
-              </strong>{" "}
+              </strong>
               <br />
               <br /> A Higienização do Banheiro Químico é feita por meio de
-              <strong> sucção para um caminhão tanque</strong>, após a sucção dos
-              dejetos o caminhão faz o descarte e emite o comprovante com a
+              <strong> sucção para um caminhão tanque</strong>, após a sucção
+              dos dejetos o caminhão faz o descarte e emite o comprovante com a
               SABESP.
               <br />
               <br /> O tanque do
@@ -121,6 +169,55 @@ function Quimicos() {
               necessário fazer a manutenção semanalmente para manter o seu
               efeito efetivo.
             </P>
+          </Container>
+        </Container>
+
+        <Container width="82.5%" jcontent="space-between" direction="row">
+          <Container width="48%" jcontent="center">
+            <Topper src={topper_a} alt="topper" />
+            <Grid>
+              <GridItem>
+                <ImgGrid src={img1a} />
+              </GridItem>
+              <GridItem>
+                <ImgGrid src={img2a} />
+              </GridItem>
+              <GridItem>
+                <ImgGrid src={img3a} />
+              </GridItem>
+              <GridItem>
+                <ImgGrid src={img4a} />
+              </GridItem>
+              <GridItem>
+                <ImgGrid src={img5a} />
+              </GridItem>
+              <GridItem>
+                <ImgGrid src={img6a} />
+              </GridItem>
+            </Grid>
+          </Container>
+          <Container width="48%" jcontent="center">
+            <Topper src={topper_a} alt="topper" />
+            <Grid>
+              <GridItem>
+                <ImgGrid src={img1a} />
+              </GridItem>
+              <GridItem>
+                <ImgGrid src={img2a} />
+              </GridItem>
+              <GridItem>
+                <ImgGrid src={img3a} />
+              </GridItem>
+              <GridItem>
+                <ImgGrid src={img4a} />
+              </GridItem>
+              <GridItem>
+                <ImgGrid src={img5a} />
+              </GridItem>
+              <GridItem>
+                <ImgGrid src={img6a} />
+              </GridItem>
+            </Grid>
           </Container>
         </Container>
       </Container>
