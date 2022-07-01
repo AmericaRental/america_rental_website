@@ -218,9 +218,10 @@ function Header() {
 
       <Menu>
           <Content>
-            <button onClick={() => navigate('/produtos/quimicos', {replace: true})}> químicos </button>
+            <button onClick={() => navigate('/produtos/quimicos', {replace: true})}> Químicos </button>
+            {/* produtos/hidraulicos */}
             <HorizontalHR />
-            <a href="#" target={"_blank"}>item 2</a>
+            <button onClick={() => navigate('/produtos/hidraulicos', {replace: true})}>Hidráulicos</button>
             <HorizontalHR />
             <a href="#" target={"_blank"}>item 3</a>
             <HorizontalHR />
