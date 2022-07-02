@@ -1,12 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import { Autoplay, Navigation } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 import Footer from "../components/global/footer";
 import Header from "../components/global/header";
 
 import banner from "../images/pia/banner.svg";
+import '../css/pia_swiper.css';
 
 import pia from "../images/pia/pia.svg";
 import pia2 from "../images/pia/pia2.svg";
+import pia3 from "../images/pia/pia3.svg";
 
 function Pia() {
   const Banner = styled.div`
@@ -41,7 +45,7 @@ function Pia() {
   const Main = styled.main`
     width: 100vw;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     margin: 0 auto;
   `;
 
@@ -57,11 +61,11 @@ function Pia() {
     width: ${(props) => props.width || " 100vw"};
     height: auto;
     display: flex;
-    margin: ${props => props.margin || '0'};
+    margin: ${(props) => props.margin || "0"};
     flex-direction: ${(props) => props.direction || "row"};
     justify-content: ${(props) => props.jContent || "center"};
     align-items: ${(props) => props.itemsAlign || "center"};
-    background-color: ${props => props.background || 'transparent'};
+    background-color: ${(props) => props.background || "transparent"};
   `;
 
   const P = styled.p`
@@ -97,7 +101,7 @@ function Pia() {
         </Title>
       </Banner>
       <Main>
-        <Container width='80%' margin='0 auto'>
+        <Container width="80%" margin="0 auto">
           <Container width="60%" direction="column" jContent="center">
             <P txtTransform="Uppercase" size="1.1rem">
               Modelos Portáteis
@@ -135,13 +139,32 @@ function Pia() {
           <Img src={pia} alt="pia portátil" width={"20%"} margin="-2% 0 2% 0" />
         </Container>
 
-        <Container direction='column'>
-          <Container background='#143854' margin='0 0 1.8% 0'>
-            <P color='#fff' family='Montserrat' margin='7px 0'>Especificação do Produto</P>
+        <Container direction="column">
+          <Container background="#143854" margin="0 0 1.8% 0">
+            <P color="#fff" family="Montserrat" margin="7px 0">
+              Especificação do Produto
+            </P>
           </Container>
 
           <Container>
-
+            <Swiper
+              spaceBetween={30}
+              centeredSlides={true}
+              autoplay={{
+                autoplay: 1000,
+                disableOnInteraction: false,
+              }}
+              navigation={true}
+              modules={[Autoplay, Navigation]}
+              className='swiperpia'
+            >
+              <SwiperSlide className="swiperSlideItem">
+                <img src={pia2} />
+              </SwiperSlide>
+              <SwiperSlide className="swiperSlideItem">
+                <img src={pia3} />
+              </SwiperSlide>
+            </Swiper>
           </Container>
         </Container>
       </Main>

@@ -1,0 +1,20 @@
+.swiperpia{ 
+    width: 35%;
+}
+
+.swiper-slide {
+    width: fit-content;
+}
+
+.swiperSlideItem{ 
+    width: 450px;
+}
+
+.swiperSlideItem > img { 
+    width: auto;
+    height: 450px;
+}
+
+.swiper-button-prev .swiper-button-next{
+    color: black;
+}
