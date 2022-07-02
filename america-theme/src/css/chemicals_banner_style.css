@@ -1,5 +1,5 @@
 .bannerSwipe {
-  width: 80%;
+  width: 50%;
   height: max-content;
   background-color: #fff;
   display: flex;
@@ -8,12 +8,12 @@
 }
 
 .bannerSwipe > img {
-  width: 500px;
+  width: 400px;
   height: auto;
-  object-fit: scale-down;
+  object-fit: cover;
 }
 .SwiperChemical {
-  width: 90%;
+  width: 25%;
   height: 450px;
   display: flex;
   align-items: center;

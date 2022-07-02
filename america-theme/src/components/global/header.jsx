@@ -200,7 +200,7 @@ function Header() {
           <Div jContent="space-between" margin="0" size="39%">
             {menuItems.map((menu, index) => {
               return menu.submenu == null ? (
-                <Button key={index}>{menu.title}</Button>
+                <Button key={index} onClick={menu.url.length > 0 ? () => navigate(menu.url, {replace: true}) : () => console.log('')}>{menu.title}</Button>
               ) : (
                 <Button
                   key={index}
@@ -223,7 +223,7 @@ function Header() {
             <HorizontalHR />
             <button onClick={() => navigate('/produtos/hidraulicos', {replace: true})}>Hidráulicos</button>
             <HorizontalHR />
-            <a href="#" target={"_blank"}>item 3</a>
+            <button onClick={() => navigate('/produtos/pia', {replace: true})}>Pia Portátil</button>
             <HorizontalHR />
             <a href="#" target={"_blank"}>item 4</a>
           </Content>
