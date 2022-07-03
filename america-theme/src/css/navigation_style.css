@@ -91,3 +91,11 @@
   display: flex;
   left: 120%;
 }
+
+.lastLevel li{ 
+  margin: 10px 0;
+}
+
+.lastLevel li:hover{ 
+  color: #1e547e;
+}

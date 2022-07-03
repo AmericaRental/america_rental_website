@@ -16,28 +16,32 @@ export const menuItems = [
       {
         title: "Sanitário Químico",
         url: "/produtos/quimicos",
+        submenu: [
+          {
+            title: "Modelo Standard",
+            url: "/",
+          },
+          {
+            title: "Modelo Luxo",
+            url: "/",
+          },
+          {
+            title: "Modelo Extra Luxo",
+            url: "/",
+          },
+          {
+            title: "Modelo PNE",
+            url: "/",
+          },
+        ],
       },
       {
         title: "Cabines Hidráulicas",
         url: "/produtos/hidraulicos",
         submenu: [
-          {
-            title: "Modelo Standard",
-            url: '/'
-          },
-          {
-            title: "Modelo Luxo",
-            url: '/'
-          },
-          {
-            title: "Modelo Extra Luxo",
-            url: '/'
-          },
-          {
-            title: "Modelo PNE",
-            url: '/'
-          },
-        ]
+          { title: "Modelo Convencional", url: "/" },
+          { title: "Chuveiro Portátil", url: "/" },
+        ],
       },
       {
         title: "Pia Portátil",
@@ -52,12 +56,13 @@ export const menuItems = [
         url: "/",
       },
       {
-        title: 'Bilheteria Individual',
-        url: '/produtos/bilheteria_individual'
-      },{
-        title: 'Bilheteria Dupla',
-        url: '/produtos/bilheteria_dupla'
-      }
+        title: "Bilheteria Individual",
+        url: "/produtos/bilheteria_individual",
+      },
+      {
+        title: "Bilheteria Dupla",
+        url: "/produtos/bilheteria_dupla",
+      },
     ],
   },
   {
