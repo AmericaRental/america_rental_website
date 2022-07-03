@@ -6,7 +6,7 @@ import Footer from "../components/global/footer";
 import Header from "../components/global/header";
 
 import banner from "../images/pia/banner.svg";
-import '../css/pia_swiper.css';
+import "../css/pia_swiper.css";
 
 import pia from "../images/pia/pia.svg";
 import pia2 from "../images/pia/pia2.svg";
@@ -86,6 +86,11 @@ function Pia() {
     margin: ${(props) => props.margin || "0"};
   `;
 
+  const Li = styled.li`
+    font-family: "Inter";
+    font-size: 1.2rem;
+    margin: 10px 0;
+  `;
   return (
     <>
       <Header />
@@ -156,15 +161,29 @@ function Pia() {
               }}
               navigation={true}
               modules={[Autoplay, Navigation]}
-              className='swiperpia'
+              className="swiperpia"
             >
               <SwiperSlide className="swiperSlideItem">
-                <img src={pia2} />
+                <img src={pia2} alt="pia" />
               </SwiperSlide>
               <SwiperSlide className="swiperSlideItem">
-                <img src={pia3} />
+                <img src={pia3} alt="pia" />
               </SwiperSlide>
             </Swiper>
+
+            <Container direction="column" width="35%" itemsAlign="left">
+              <ul>
+                <Li>65L de capaciade de armazenamento</Li>
+                <Li>Torre com 1 a 4 pias</Li>
+                <Li>Fácil reabastecimento de água e insumos</Li>
+                <Li>Sistema de bombeamento manual com os pés</Li>
+                <Li>Suporte de papel toalha e sabonete</Li>
+                <Li>Reservatório de insumos pelo o teto</Li>
+                <Li>Tanque de descarte de 260L</Li>
+                <Li>Lixeira</Li>
+                <Li>Piso antiderrapante</Li>
+              </ul>
+            </Container>
           </Container>
         </Container>
       </Main>

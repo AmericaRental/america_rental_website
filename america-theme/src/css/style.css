@@ -16,7 +16,7 @@
 
 .banner {
   width: 100vw;
-  height: 700px;
+  height: max-content;
 }
 
 .bannerImage {
