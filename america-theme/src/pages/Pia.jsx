@@ -11,6 +11,9 @@ import "../css/pia_swiper.css";
 import pia from "../images/pia/pia.svg";
 import pia2 from "../images/pia/pia2.svg";
 import pia3 from "../images/pia/pia3.svg";
+import bubble1 from "../images/pia/bubble1.svg";
+import bubble2 from "../images/pia/bubble2.svg";
+import bubble3 from "../images/pia/bubble3.svg";
 
 function Pia() {
   const Banner = styled.div`
@@ -183,7 +186,43 @@ function Pia() {
                 <Li>Lixeira</Li>
                 <Li>Piso antiderrapante</Li>
               </ul>
+
+              <H1 margin="5% 0">dimensões do produto</H1>
+              <P color="#1e5680" size="1.5rem">
+                A 1,75m X L 1,15m X P 1,15m
+              </P>
+              <P color="#1e5680" size="1.2rem" margin="3% 0 0 0">
+                50Kg
+              </P>
             </Container>
+          </Container>
+        </Container>
+
+        <Container background="#f2f2f2" direction="column">
+          <H1 size="3.2rem" margin="1.5% 0">
+            Visita Técnica
+          </H1>
+
+          <P size="1.3rem" width="73%" color="#6C6C6C" line="2rem">
+            Em casos específicos pode ser realizado o agendamento de uma
+            <strong> visita técnica, sem custo</strong>, para a verificação da
+            possibilidade de instalação de determinados equipamentos.
+          </P>
+
+          <P
+            size="1.3rem"
+            width="73%"
+            margin="1.5% 0 "
+            color="#6C6C6C"
+            line="2rem"
+          >
+            Se você tiver alguma dúvida sobre a sua instalação, entre em contato
+            e agende agora mesmo.
+          </P>
+          <Container jContent="space-evenly">
+            <Img src={bubble1} alt="bolha 1" width="20%" />
+            <Img src={bubble2} alt="bolha 2" width="20%" />
+            <Img src={bubble3} alt="bolha 3" width="20%" />
           </Container>
         </Container>
       </Main>
