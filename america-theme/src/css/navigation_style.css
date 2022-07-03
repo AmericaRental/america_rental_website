@@ -4,6 +4,7 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+  height: max-content;
 }
 
 .navlist li {
@@ -44,4 +45,49 @@
 .navlist li:hover > ul {
   display: flex;
   transition: 0.4s ease-in-out;
+}
+
+.submenuitem {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-family: 'Inter';
+  font-size: 1rem;
+  width: 200px;
+  margin: 10px 0;
+}
+
+.submenuitem:hover{ 
+  color: #1e547e;
+}
+
+.nestedSubMenu{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-family: 'Inter';
+  font-size: 1rem;
+  width: 200px;
+  margin: 10px 0;
+}
+
+.lastLevel{ 
+  z-index: 10;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  left: 0%;
+  position: absolute;
+  top: 100%;
+  list-style-type: none;
+  margin: 0 0px 0 -70px;
+  padding: 20px 0;
+  width: 180px;
+  background-color: #fff;
+}
+
+.nestedSubMenu:hover > .lastLevel {
+  display: flex;
+  left: 120%;
 }

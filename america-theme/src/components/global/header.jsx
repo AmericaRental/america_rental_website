@@ -13,7 +13,6 @@ import { useNavigate } from "react-router-dom";
 import "../../css/navigation_style.css";
 
 function Header() {
-
   let navigate = useNavigate();
 
   const StyledHeader = styled.header`
@@ -157,7 +156,7 @@ function Header() {
                     <Button
                       onClick={
                         menu.url.length > 0
-                          ? () => navigate(menu.url)
+                          ? () => navigate(menu.url, { replace: true })
                           : () => console.log("")
                       }
                     >
@@ -166,21 +165,35 @@ function Header() {
                   </li>
                 ) : (
                   <li key={index}>
-                    <Button
-                      onClick={navigate(menu.url, {replace: true})}
-                    >
+                    <Button onClick={navigate(menu.url, { replace: true })}>
                       {menu.title}
                     </Button>
 
                     <ul>
                       {menu.submenu.map((subItem, index) => {
                         return (
-                          <li onClick={navigate(subItem.url, {replace: true})} key={index}>
-                            <button
-                              className="submenuitem"
-                            >
-                              {subItem.title}
-                            </button>
+                          <li
+                            onClick={() =>
+                              navigate(subItem.url, { replace: true })
+                            }
+                            key={index}
+                          >
+                            {subItem.submenu != null ? (
+                              <button className="nestedSubMenu">
+                                {subItem.title}
+                                <ul className="lastLevel">
+                                  {subItem.submenu.map((item, index) => {
+                                    return (
+                                      <li key={index} onClick={navigate(item.url)}>
+                                        {item.title}
+                                      </li>
+                                    );
+                                  })}
+                                </ul>
+                              </button>
+                            ) : (
+                              subItem.title
+                            )}
                           </li>
                         );
                       })}
