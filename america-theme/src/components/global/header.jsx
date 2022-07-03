@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import vetor_logo_america_colorido from "../../images/vetor_logo_america_colorido.svg";
@@ -13,19 +13,8 @@ import { useNavigate } from "react-router-dom";
 import "../../css/navigation_style.css";
 
 function Header() {
-  const [menuvisible, setMenuvisible] = useState(false);
 
-  const handleClick = (event) => {
-    event.preventDefault();
-    setMenuvisible(!menuvisible);
-  };
-  useEffect(() => {
-    menuvisible
-      ? (document.body.style.overflow = "hidden")
-      : (document.body.style.overflow = "overlay");
-  }, [menuvisible]);
-
-  const navigate = useNavigate();
+  let navigate = useNavigate();
 
   const StyledHeader = styled.header`
     width: 100%;
@@ -168,7 +157,7 @@ function Header() {
                     <Button
                       onClick={
                         menu.url.length > 0
-                          ? () => navigate(menu.url, { replace: true })
+                          ? () => navigate(menu.url)
                           : () => console.log("")
                       }
                     >
@@ -178,8 +167,7 @@ function Header() {
                 ) : (
                   <li key={index}>
                     <Button
-                      onClick={handleClick}
-                      className={menuvisible ? "btn_active" : ""}
+                      onClick={navigate(menu.url, {replace: true})}
                     >
                       {menu.title}
                     </Button>
@@ -187,9 +175,8 @@ function Header() {
                     <ul>
                       {menu.submenu.map((subItem, index) => {
                         return (
-                          <li key={index}>
+                          <li onClick={navigate(subItem.url, {replace: true})} key={index}>
                             <button
-                              onClick={handleClick}
                               className="submenuitem"
                             >
                               {subItem.title}

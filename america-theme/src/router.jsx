@@ -4,7 +4,6 @@ import Home from "./pages/home";
 import WhoWeAre from "./pages/WhoWeAre";
 
 import React from "react";
-import Produtos from "./pages/Produtos";
 import Quimicos from "./pages/Quimicos";
 import Hidraulicos from "./pages/Hidraulicos";
 import Pia from "./pages/Pia";
