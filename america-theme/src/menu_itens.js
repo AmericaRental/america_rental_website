@@ -2,12 +2,12 @@ export const menuItems = [
   {
     title: "Home",
     url: "/",
-    submenu: null
+    submenu: null,
   },
   {
     title: "Quem somos",
     url: "/about",
-    submenu: null
+    submenu: null,
   },
   {
     title: "Produtos",
@@ -15,29 +15,29 @@ export const menuItems = [
     submenu: [
       {
         title: "Sanitário Químico",
-        url: '/'
+        url: "/produtos/quimicos",
       },
       {
         title: "Cabines Hidráulicas",
-        url: '/'
+        url: "/produtos/hidraulicos",
       },
       {
         title: "Pia Portátil",
-        url: '/'
+        url: "/produto/pia",
       },
       {
         title: "Mictório Kros",
-        url: '/'
+        url: "/",
       },
       {
         title: "Guaritas",
-        url: '/'
+        url: "/",
       },
     ],
   },
   {
     title: "Contato",
     url: "/",
-    submenu: null
+    submenu: null,
   },
 ];

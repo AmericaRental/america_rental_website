@@ -1,0 +1,47 @@
+.navlist {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navlist li {
+  padding: 8px;
+  position: relative;
+  font-family: "Inter";
+}
+
+.navlist ul {
+  z-index: 10;
+  /* Hidden by default */
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* Absolute position */
+  left: 0;
+  position: absolute;
+  top: 100%;
+
+  /* Reset styles */
+  list-style-type: none;
+  margin: 0 0px 0 -70px;
+  padding: 20px 0;
+
+  /* Width */
+  width: 250px;
+  background-color: #fff;
+}
+
+.navlist ul ul {
+  left: 100%;
+  position: absolute;
+  top: 0;
+  transition: 0.4s ease-in-out;
+}
+
+.navlist li:hover > ul {
+  display: flex;
+  transition: 0.4s ease-in-out;
+}

@@ -10,6 +10,8 @@ import whatsapp from "../../images/whatsapp.svg";
 import { menuItems } from "../../menu_itens";
 import { useNavigate } from "react-router-dom";
 
+import "../../css/navigation_style.css";
+
 function Header() {
   const [menuvisible, setMenuvisible] = useState(false);
 
@@ -34,7 +36,6 @@ function Header() {
     justify-content: center;
     box-shadow: 0 7px 7px -5px #00000088;
   `;
-
   const SocialHeader = styled.section`
     background-color: #143955;
     height: 30px;
@@ -45,7 +46,6 @@ function Header() {
     align-items: center;
     justify-content: center;
   `;
-
   const LogoAmerica = styled.img`
     width: 350px;
     height: auto;
@@ -54,7 +54,6 @@ function Header() {
   LogoAmerica.defaultProps = {
     src: vetor_logo_america_colorido,
   };
-
   const Paragraph = styled.p`
     color: ${(props) => props.cor || "#000000"};
     font-size: ${(props) => props.tamanho || "1.25rem"};
@@ -71,12 +70,10 @@ function Header() {
     padding: ${(props) => props.padding || "0px"};
     margin: ${(props) => props.margin || "0px"};
   `;
-
   const Img = styled.img`
     width: 18px;
     height: 18px;
   `;
-
   const Button = styled.button`
     width: 130px;
     height: fit-content;
@@ -99,40 +96,6 @@ function Header() {
     }
   `;
 
-  const Menu = styled.div`
-    position: absolute;
-    display: ${menuvisible ? "inline-block" : "none"};
-    z-index: 2;
-    background-color: #0000008d;
-    margin: 0 auto;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    transition: ease-in-out 400ms;
-  `;
-
-  const Content = styled.section`
-    display: ${menuvisible ? "block" : "none"};
-    background-color: white;
-    min-width: 10rem;
-    display: flex;
-    flex-direction: column;
-    margin: 10px 0% 0 67%;
-    width: 200px;
-    padding: 30px 20px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    transition: ease-in-out 600ms;
-  `;
-
-  const HorizontalHR = styled.hr`
-    width: 90%;
-    height: 1px;
-    background-color: black;
-    border: none;
-    margin: 8px;
-  `;
   return (
     <>
       {/* mídias sociais acima do header */}
@@ -198,58 +161,50 @@ function Header() {
         <Div jContent="space-around" size="85%">
           <LogoAmerica />
           <Div jContent="space-between" margin="0" size="39%">
-            {menuItems.map((menu, index) => {
-              return menu.submenu == null ? (
-                <Button
-                  key={index}
-                  onClick={
-                    menu.url.length > 0
-                      ? () => navigate(menu.url, { replace: true })
-                      : () => console.log("")
-                  }
-                >
-                  {menu.title}
-                </Button>
-              ) : (
-                <Button
-                  key={index}
-                  onClick={handleClick}
-                  onho
-                  className={menuvisible ? "btn_active" : ""}
-                >
-                  {menu.title}
-                </Button>
-              );
-            })}
+            <ul className="navlist">
+              {menuItems.map((menu, index) => {
+                return menu.submenu == null ? (
+                  <li key={index}>
+                    <Button
+                      onClick={
+                        menu.url.length > 0
+                          ? () => navigate(menu.url, { replace: true })
+                          : () => console.log("")
+                      }
+                    >
+                      {menu.title}
+                    </Button>
+                  </li>
+                ) : (
+                  <li key={index}>
+                    <Button
+                      onClick={handleClick}
+                      className={menuvisible ? "btn_active" : ""}
+                    >
+                      {menu.title}
+                    </Button>
+
+                    <ul>
+                      {menu.submenu.map((subItem, index) => {
+                        return (
+                          <li key={index}>
+                            <button
+                              onClick={handleClick}
+                              className="submenuitem"
+                            >
+                              {subItem.title}
+                            </button>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </li>
+                );
+              })}
+            </ul>
           </Div>
         </Div>
       </StyledHeader>
-
-      <Menu>
-        <Content>
-          <button
-            onClick={() => navigate("/produtos/quimicos", { replace: true })}
-          >
-            {" "}
-            Químicos{" "}
-          </button>
-          {/* produtos/hidraulicos */}
-          <HorizontalHR />
-          <button
-            onClick={() => navigate("/produtos/hidraulicos", { replace: true })}
-          >
-            Hidráulicos
-          </button>
-          <HorizontalHR />
-          <button onClick={() => navigate("/produtos/pia", { replace: true })}>
-            Pia Portátil
-          </button>
-          <HorizontalHR />
-          <a href="#" target={"_blank"}>
-            item 4
-          </a>
-        </Content>
-      </Menu>
     </>
   );
 }
