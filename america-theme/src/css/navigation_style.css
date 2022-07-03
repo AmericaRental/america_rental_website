@@ -99,3 +99,10 @@
 .lastLevel li:hover{ 
   color: #1e547e;
 }
+
+.link{
+  text-decoration: none;
+  outline: none;
+  color: black;
+  font-family: 'Inter';
+}

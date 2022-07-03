@@ -8,7 +8,7 @@ import instagram from "../../images/instagram.svg";
 import linkedin from "../../images/linkedin.svg";
 import whatsapp from "../../images/whatsapp.svg";
 import { menuItems } from "../../menu_itens";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "../../css/navigation_style.css";
 
@@ -153,21 +153,11 @@ function Header() {
               {menuItems.map((menu, index) => {
                 return menu.submenu == null ? (
                   <li key={index}>
-                    <Button
-                      onClick={
-                        menu.url.length > 0
-                          ? () => navigate(menu.url, { replace: true })
-                          : () => console.log("")
-                      }
-                    >
-                      {menu.title}
-                    </Button>
+                    <Link to={menu.url} className='link'>{menu.title}</Link>
                   </li>
                 ) : (
                   <li key={index}>
-                    <Button onClick={navigate(menu.url, { replace: true })}>
-                      {menu.title}
-                    </Button>
+                    <Button>{menu.title}</Button>
 
                     <ul>
                       {menu.submenu.map((subItem, index) => {
@@ -184,8 +174,11 @@ function Header() {
                                 <ul className="lastLevel">
                                   {subItem.submenu.map((item, index) => {
                                     return (
-                                      <li key={index} onClick={navigate(item.url)}>
-                                        {item.title}
+                                      <li
+                                        key={index}
+                                        onClick={navigate(item.url, {replace: true})}
+                                      >
+                                        <Link to={item.url} className='link'>{item.title}</Link>
                                       </li>
                                     );
                                   })}

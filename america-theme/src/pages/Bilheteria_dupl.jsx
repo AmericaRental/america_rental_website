@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Bilheteria_dupl() {
+function BilheteriaDupl() {
   return (
     <div>Bilheteria_dupl</div>
   )
 }
 
-export default Bilheteria_dupl
+export default BilheteriaDupl

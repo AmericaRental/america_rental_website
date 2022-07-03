@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Bilherteria_ind() {
+function BilherteriaInd() {
   return (
     <div>Bilherteria_ind</div>
   )
 }
 
-export default Bilherteria_ind
+export default BilherteriaInd

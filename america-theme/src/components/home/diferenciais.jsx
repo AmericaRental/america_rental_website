@@ -27,7 +27,7 @@ export default class Diferenciais extends Component {
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      padding: 15px 0;
+      padding: 2.3% 0;
     `;
     const Div = styled.div`
       width: ${(props) => props.width || "100%"};
