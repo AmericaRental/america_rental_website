@@ -19,19 +19,19 @@ export const menuItems = [
         submenu: [
           {
             title: "Modelo Standard",
-            url: "/",
+            url: "/produtos/quimicos/standard",
           },
           {
             title: "Modelo Luxo",
-            url: "/",
+            url: "/produtos/quimicos/luxo",
           },
           {
             title: "Modelo Extra Luxo",
-            url: "/",
+            url: "/produtos/quimicos/extraluxo",
           },
           {
             title: "Modelo PNE",
-            url: "/",
+            url: "/produtos/quimicos/pne",
           },
         ],
       },

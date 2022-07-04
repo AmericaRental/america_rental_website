@@ -44,7 +44,7 @@ function TechnicalVisit() {
   `;
   return (
     <>
-      <Container background="#f2f2f2" direction="column">
+      <Container background="#f2f2f2" direction="column" margin='20px 0 0 0'>
         <H1 size="3.2rem" margin="1.5% 0">
           Visita Técnica
         </H1>

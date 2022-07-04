@@ -104,22 +104,22 @@ function Hidraulicos() {
             modules={[Autoplay]}
           >
             <SwiperSlide className="bannerSwipe">
-              <img src={step1} />
+              <img src={step1} alt='step'/>
             </SwiperSlide>
             <SwiperSlide className="bannerSwipe">
-              <img src={step2} />
+              <img src={step2} alt='step'/>
             </SwiperSlide>
             <SwiperSlide className="bannerSwipe">
-              <img src={step3} />
+              <img src={step3} alt='step'/>
             </SwiperSlide>
             <SwiperSlide className="bannerSwipe">
-              <img src={step4} />
+              <img src={step4} alt='step'/>
             </SwiperSlide>
             <SwiperSlide className="bannerSwipe">
-              <img src={step5} />
+              <img src={step5} alt='step'/>
             </SwiperSlide>
             <SwiperSlide className="bannerSwipe">
-              <img src={step6} />
+              <img src={step6} alt='step'/>
             </SwiperSlide>
           </Swiper>
 
