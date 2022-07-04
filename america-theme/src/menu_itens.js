@@ -45,7 +45,7 @@ export const menuItems = [
       },
       {
         title: "Pia Portátil",
-        url: "/produto/pia",
+        url: "/produtos/pia",
       },
       {
         title: "Mictório Kros",

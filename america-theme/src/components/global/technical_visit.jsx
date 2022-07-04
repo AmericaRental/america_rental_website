@@ -25,7 +25,7 @@ function TechnicalVisit() {
   `;
 
   const Container = styled.div`
-    width: ${(props) => props.width || " 100vw"};
+    width: ${(props) => props.width || " 100%"};
     height: auto;
     display: flex;
     margin: ${(props) => props.margin || "0"};
