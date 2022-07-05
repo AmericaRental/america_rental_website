@@ -1,12 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import funcionarios from "../../images/funcionarios.svg";
-import useWindowChange from "../global/hooks/useWindowWidth";
 
 function About() {
-  const [width] = useWindowChange();
-
-  const scale = ((100 * width) / 1920) * 2.5;
 
   const Div = styled.div`
     width: 100%;

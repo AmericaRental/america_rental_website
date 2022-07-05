@@ -1,26 +1,16 @@
 import React from "react";
 
 import { menuItems } from "../../menu_itens";
-import '../../css/hamburger_menu.css';
+import "../../css/hamburger_menu.css";
 
-function SmallScreenMenu() {
+function SmallScreenMenu(props) {
   return (
-    <div>
-      {/* menu icon */}
-      <label htmlFor="check">
-        <input type="checkbox" id="check" />
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
-      </label>
-      {/* Menu */}
+    <div className={props.visible === true ? "menuContainer" : "hidden"}>
       <section className="menu">
         <ul className="menuUl">
-        {menuItems.map((item, index) => {
-            return(
-              <li className="menuItem">{item.title}</li>  
-            );
-        })}
+          {menuItems.map((item, index) => {
+            return <li className="menuItem">{item.title}</li>;
+          })}
         </ul>
       </section>
     </div>

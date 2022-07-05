@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import vetor_logo_america_colorido from "../../images/vetor_logo_america_colorido.svg";
@@ -13,10 +13,12 @@ import DesktopMenu from "./desktop_menu";
 import { menuItems } from "../../menu_itens";
 import useWindowChange from "./hooks/useWindowWidth";
 import SmallScreenMenu from "./small_screens_menu";
-
+// import HamburgerButton from "./hamburger_button";
 
 function Header() {
   const [windowWidth] = useWindowChange();
+
+  const [visibility, setVisibility] = useState(false);
 
   const StyledHeader = styled.header`
     width: 100%;
@@ -166,9 +168,25 @@ function Header() {
           >
             <LogoAmerica />
 
-            {windowWidth <= 1000 ? <SmallScreenMenu /> : <DesktopMenu items={menuItems} />}
+            {windowWidth <= 1000 ? (
+              <label htmlFor="check">
+                <input
+                  type="checkbox"
+                  id="check"
+                  onChange={() =>
+                    visibility ? setVisibility(false) : setVisibility(true)
+                  }
+                />
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
+              </label>
+            ) : (
+              <DesktopMenu items={menuItems} />
+            )}
           </Div>
         </Div>
+        <SmallScreenMenu visible={visibility} />
       </StyledHeader>
     </>
   );
