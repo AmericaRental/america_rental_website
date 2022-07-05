@@ -15,12 +15,7 @@ import useWindowChange from "./hooks/useWindowWidth";
 import SmallScreenMenu from "./small_screens_menu";
 // import HamburgerButton from "./hamburger_button";
 
-function Header() {
-  const [windowWidth] = useWindowChange();
-
-  const [visibility, setVisibility] = useState(false);
-
-  const StyledHeader = styled.header`
+const StyledHeader = styled.header`
     width: 100%;
     height: 89px;
     display: flex;
@@ -97,6 +92,11 @@ function Header() {
     height: 18px;
   `;
 
+function Header() {
+  const [windowWidth] = useWindowChange();
+
+  const [visibility, setVisibility] = useState(false);
+
   return (
     <>
       {/* mídias sociais acima do header */}
@@ -169,14 +169,10 @@ function Header() {
             <LogoAmerica />
 
             {windowWidth <= 1000 ? (
-              <label htmlFor="check">
-                <input
-                  type="checkbox"
-                  id="check"
-                  onChange={() =>
-                    visibility ? setVisibility(false) : setVisibility(true)
-                  }
-                />
+              <label
+                htmlFor="check"
+              >
+                <input type="checkbox" id="check" onChange={() => visibility ? setVisibility(false) : setVisibility(true)} />
                 <span className="bar"></span>
                 <span className="bar"></span>
                 <span className="bar"></span>
