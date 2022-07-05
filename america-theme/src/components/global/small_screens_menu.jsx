@@ -9,9 +9,9 @@ function SmallScreenMenu() {
       {/* menu icon */}
       <label htmlFor="check">
         <input type="checkbox" id="check" />
-        <span></span>
-        <span></span>
-        <span></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
       </label>
       {/* Menu */}
       <section className="menu">
