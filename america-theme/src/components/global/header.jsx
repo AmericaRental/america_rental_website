@@ -12,10 +12,11 @@ import "../../css/navigation_style.css";
 import DesktopMenu from "./desktop_menu";
 import { menuItems } from "../../menu_itens";
 import useWindowChange from "./hooks/useWindowWidth";
+import SmallScreenMenu from "./small_screens_menu";
 
 
 function Header() {
-  const [windowWidth, windowHeight] = useWindowChange();
+  const [windowWidth] = useWindowChange();
 
   const StyledHeader = styled.header`
     width: 100%;
@@ -165,7 +166,7 @@ function Header() {
           >
             <LogoAmerica />
 
-            {windowWidth <= 1000 ? <></> : <DesktopMenu items={menuItems} />}
+            {windowWidth <= 1000 ? <SmallScreenMenu /> : <DesktopMenu items={menuItems} />}
           </Div>
         </Div>
       </StyledHeader>
