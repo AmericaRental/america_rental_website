@@ -37,6 +37,11 @@ export default class Diferenciais extends Component {
       align-items: center;
       flex-direction: ${(props) => props.direction || "columm"};
       text-align: center;
+      
+      @media (max-width: 1000px) {
+        flex-direction: column;
+        margin-top: ${props => props.mMarginTop ||'0'};
+      }
     `;
 
     const P = styled.p`
@@ -53,7 +58,7 @@ export default class Diferenciais extends Component {
         <Title marginb='30px' spacing='0px'>Nossos Diferenciais</Title>
 
         <Div direction="row" content="space-evenly">
-          <Div direction="column" width="400px" >
+          <Div direction="column" width="400px" mMarginTop='3.6%' >
             <img src={certification} alt="certificações" />
             <Title size="28px" marginb='4px' family='Open Sans'>Licenças e Certificados</Title>
             <P>
@@ -61,7 +66,7 @@ export default class Diferenciais extends Component {
               fiquem sempre protegidos.
             </P>
           </Div>
-          <Div direction="column" width="400px">
+          <Div direction="column" width="400px" mMarginTop='3.6%'>
             <img src={headset} alt="Atendimento" />
             <Title size="28px" marginb='4px' family='Open Sans' >Atendimento de Qualidade</Title>
             <P>
@@ -69,7 +74,7 @@ export default class Diferenciais extends Component {
               com a Logística para maior agilidade.
             </P>
           </Div>
-          <Div direction="column" width="400px">
+          <Div direction="column" width="400px" mMarginTop='3.6%'>
             <img src={environment} alt="Consiência" />
             <Title size="28px" marginb='4px' family='Open Sans' >Descarte Consciente</Title>
             <P>

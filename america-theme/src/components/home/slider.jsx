@@ -65,7 +65,7 @@ export default function Slider() {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          autoplay: 1500,
+          autoplay: 3000,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -75,44 +75,44 @@ export default function Slider() {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>
+        <SwiperSlide className="mySwiperSlider">
           <img src={logo1} alt='logo parceiro'/>
           <img src={logo2} alt='logo parceiro'/>
           <img src={logo3} alt='logo parceiro'/>
           <img src={logo4} alt='logo parceiro'/>
 
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="mySwiperSlider">
           <img src={logo5} alt='logo parceiro'/>
           <img src={logo6} alt='logo parceiro'/>
           <img src={logo7} alt='logo parceiro'/>
           <img src={logo8} alt='logo parceiro'/>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="mySwiperSlider">
           <img src={logo9} alt='logo parceiro'/>
           <img src={logo10} alt='logo parceiro'/>
           <img src={logo11} alt='logo parceiro'/>
           <img src={logo12} alt='logo parceiro'/>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="mySwiperSlider">
           <img src={logo13} alt='logo parceiro'/>
           <img src={logo14} alt='logo parceiro'/>
           <img src={logo15} alt='logo parceiro'/>
           <img src={logo16} alt='logo parceiro'/>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="mySwiperSlider">
           <img src={logo17} alt='logo parceiro'/>
           <img src={logo18} alt='logo parceiro'/>
           <img src={logo19} alt='logo parceiro'/>
           <img src={logo20} alt='logo parceiro'/>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="mySwiperSlider">
           <img src={logo21} alt='logo parceiro'/>
           <img src={logo22} alt='logo parceiro'/>
           <img src={logo23} alt='logo parceiro'/>
           <img src={logo24} alt='logo parceiro'/>
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="mySwiperSlider">
           <img src={logo25} alt='logo parceiro'/>
           <img src={logo26} alt='logo parceiro'/>
           <img src={logo27} alt='logo parceiro'/>

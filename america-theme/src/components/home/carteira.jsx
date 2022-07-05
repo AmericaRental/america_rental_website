@@ -18,6 +18,10 @@ export default class Carteira extends Component {
       font-size: 40px;
       font-family: "DM Sans";
       font-weight: bold;
+
+      @media (max-width: 1000px) {
+        font-size: 2rem;
+      }
     `;
 
     const P = styled.p`
@@ -27,16 +31,26 @@ export default class Carteira extends Component {
       letter-spacing: 0.02em;
       width: 79%;
       margin: 30px 0;
+      @media (max-width: 1000px) {
+        font-size: 1.25rem;
+        width: 85%;
+      }
     `;
 
     const Strong = styled.strong`
       font-size: 32px;
       font-weight: 600;
+      @media (max-width: 1000px) {
+        font-size: 1.35rem;
+      }
     `;
 
     const Img = styled.img`
-      width: 60%;
+      width: 60vw;
       margin-top: 20px;
+      @media (max-width: 1000px) {
+        width: 100vw;
+      }
     `;
 
     return (

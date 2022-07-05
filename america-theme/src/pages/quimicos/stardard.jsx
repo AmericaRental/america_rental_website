@@ -77,6 +77,7 @@ function Standard() {
         }}
         navigation={false}
         modules={[Autoplay]}
+        className='cabine-swiper'
       >
         <SwiperSlide>
           <img src={banner1} alt="banner" />

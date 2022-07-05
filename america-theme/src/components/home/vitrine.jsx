@@ -19,6 +19,11 @@ export default class Vitrine extends Component {
       justify-content: space-evenly;
       background-color: #fafafa;
       padding: 15px 0;
+
+      @media (max-width: 1000px) {
+        flex-direction: column;
+        height: max-content;
+      }
     `;
     const HR = styled.hr`
       width: 1px;
@@ -74,31 +79,31 @@ export default class Vitrine extends Component {
             <Titulo>Sanitário Portátil</Titulo>
             <SubTitulo>Modelo Químico</SubTitulo>
           </Produto>
-          <HR />
+          {window.innerWidth <= 1000 ? <></> :<HR />}
           <Produto>
             <ImgProduto src={sanitario_hidraulico} alt='Sanitário Portátil'/>
             <Titulo>Sanitário Portátil</Titulo>
             <SubTitulo>Modelo Hidráulico</SubTitulo>
           </Produto>
-          <HR />
+          {window.innerWidth <= 1000 ? <></> :<HR />}
           <Produto>
             <ImgProduto src={chuveiro} alt='Chuveiro Portátil'/>
             <Titulo>Chuveiro Portátil</Titulo>
             <SubTitulo>Modelo Hidráulico</SubTitulo>
           </Produto>
-          <HR />
+          {window.innerWidth <= 1000 ? <></> :<HR />}
           <Produto>
             <ImgProduto src={lavatorio} alt='Lavatório para as Mãos'/>
             <Titulo>Lavatório para Mãos</Titulo>
             <SubTitulo>Independente</SubTitulo>
           </Produto>
-          <HR />
+          {window.innerWidth <= 1000 ? <></> :<HR />}
           <Produto>
             <ImgProduto src={kros} alt='mictório kros'/>
             <Titulo>Mictório Kros</Titulo>
             <SubTitulo>Modelo Químico</SubTitulo>
           </Produto>
-          <HR />
+          {window.innerWidth <= 1000 ? <></> :<HR />}
           <Produto>
             <ImgProduto src={guarita} alt='Guaritas ou bilheterias'/>
             <Titulo>Guaritas ou Bilheterias</Titulo>
