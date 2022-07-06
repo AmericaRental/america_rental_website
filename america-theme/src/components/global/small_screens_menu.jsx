@@ -90,19 +90,19 @@ function SmallScreenMenu(props) {
               </li>
             ) : (
               <li className="menuItem" key={index}>
-                {item.title}
+                {item.url !== null ? <Link to={item.url}>{item.title}</Link> : (item.title ) - (item.url)}
                 <VisibilityButton onClick={() => handleVisibility(1, visible)}>
                   {menuopened ? <reactiBi.BiChevronUp /> : <reactiBi.BiChevronDown />}
                 </VisibilityButton>
                 <NdMenu display={menuopened ? "block" : "none"}>
-                  {item.submenu.map((item, index) => {
-                    return item.submenu == null ? (
+                  {item.submenu.map((subitem, index) => {
+                    return subitem.submenu == null ? (
                       <li className="menuItem" key={index}>
-                        <Link to={item.url} className='link'>{item.title}</Link>
+                        <Link to={subitem.url} className='link'>{subitem.title}</Link>
                       </li>
                     ) : (
                       <li className="menuItem" key={index}>
-                        {item.title}{" "}
+                        {subitem.title}{" "}
                         <VisibilityButton
                           onClick={() => {
                             handleVisibility(index + 2, visible);
@@ -122,10 +122,10 @@ function SmallScreenMenu(props) {
                               : "none"
                           }
                         >
-                          {item.submenu.map((item, index) => {
+                          {subitem.submenu.map((rditem, index) => {
                             return (
                               <li className="menuItem" key={index}>
-                                <Link to={item.url} className='link'>{item.title}</Link> 
+                                <Link to={rditem.url} className='link'>{rditem.title}</Link> 
                               </li>
                             );
                           })}
