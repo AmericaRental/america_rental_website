@@ -25,6 +25,7 @@ import img6a from "../images/quimicos/img6a.svg";
 import "../css/chemicals_banner_style.css";
 import { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import WhatsappButton from "../components/global/whatsapp_button";
 
 function Quimicos() {
   const Banner = styled.img`
@@ -108,6 +109,7 @@ function Quimicos() {
           <Img src={pne} alt="modelo pne" />
         </Container>
       </Produtos>
+      <WhatsappButton />
 
       <Container width="82%" jcontent="center" margin="0 auto">
         <Container

@@ -11,6 +11,7 @@ import bubble2 from "../images/whoweare_images/bubble2.svg";
 import bubble3 from "../images/whoweare_images/bubble3.svg";
 
 import funcionarios from "../images/funcionarios.svg";
+import WhatsappButton from "../components/global/whatsapp_button";
 
 const WhoWeAre = () => {
   const Img = styled.img`
@@ -98,6 +99,8 @@ const WhoWeAre = () => {
     <>
       <Header />
       <main>
+        <WhatsappButton />
+
         <Banner>
           <Title margin="0 0% 0% 5%" family="Montserrat">
             Quem Somos
@@ -229,11 +232,11 @@ const WhoWeAre = () => {
             src={funcionarios}
             alt="funcionarios da américa rental"
             zindex="0"
-            position='inherit'
+            position="inherit"
             filter="grayscale(100%)"
             hfilter="grayscale(0%)"
-            width='auto'
-            margin='4% 0 0px 0'
+            width="auto"
+            margin="4% 0 0px 0"
           />
         </Section>
       </main>

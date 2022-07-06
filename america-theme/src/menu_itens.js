@@ -67,7 +67,7 @@ export const menuItems = [
   },
   {
     title: "Contato",
-    url: "/",
+    url: "/contato",
     submenu: null,
   },
 ];

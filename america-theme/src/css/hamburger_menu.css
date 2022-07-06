@@ -55,7 +55,7 @@ input[type='checkbox']:checked ~ .bar:nth-of-type(3){
     background-color: rgba(0, 0, 0, .5);
     display: block;
     position: absolute;
-    top:10%;
+    top:7.5%;
     z-index: 100;
     transition: linear 500ms;
 }
@@ -72,7 +72,7 @@ input[type='checkbox']:checked ~ .bar:nth-of-type(3){
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    background-color: #fafafa;
+    background-color: #ffffff;
     position: relative;
     overflow: hidden;
     transition: top 500ms ease-in-out;

@@ -15,6 +15,7 @@ import ExtraLuxo from "./pages/quimicos/extra_luxo";
 import Luxo from "./pages/quimicos/luxo";
 import PNE from "./pages/quimicos/pne";
 import Standard from "./pages/quimicos/stardard";
+import Contato from "./pages/Contato";
 
 const AppRoutes = (_) => {
   return (
@@ -27,14 +28,8 @@ const AppRoutes = (_) => {
           path="/produtos/quimicos/extraluxo"
           element={<ExtraLuxo />}
         />
-        <reactRouter.Route
-          path="/produtos/quimicos/luxo"
-          element={<Luxo />}
-        />
-        <reactRouter.Route
-          path="/produtos/quimicos/pne"
-          element={<PNE />}
-        />
+        <reactRouter.Route path="/produtos/quimicos/luxo" element={<Luxo />} />
+        <reactRouter.Route path="/produtos/quimicos/pne" element={<PNE />} />
         <reactRouter.Route
           path="/produtos/quimicos/standard"
           element={<Standard />}
@@ -52,6 +47,11 @@ const AppRoutes = (_) => {
         <reactRouter.Route
           path="/produtos/bilheteria_dupla"
           element={<BilheteriaDupl />}
+        />
+
+        <reactRouter.Route
+          path="/contato"
+          element={<Contato />}
         />
       </reactRouter.Routes>
     </>

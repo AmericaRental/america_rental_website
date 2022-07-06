@@ -13,7 +13,7 @@ const Menu = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  background-color: #fafafa;
+  background-color: #fff;
   position: relative;
   overflow: hidden;
   transition: top 500ms ease-in-out;

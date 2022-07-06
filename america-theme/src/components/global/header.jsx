@@ -182,7 +182,7 @@ function Header() {
             )}
           </Div>
         </Div>
-        <SmallScreenMenu visible={visibility} />
+        {windowWidth <= 1000 ? <SmallScreenMenu visible={visibility} /> : <></>}
       </StyledHeader>
     </>
   );

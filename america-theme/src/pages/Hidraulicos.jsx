@@ -24,6 +24,7 @@ import img5 from "../images/hidraulicos/img5.svg";
 import img6 from "../images/hidraulicos/img6.svg";
 
 import "../css/chemicals_banner_style.css";
+import WhatsappButton from "../components/global/whatsapp_button";
 function Hidraulicos() {
   const Main = styled.main`
     width: 100vw;
@@ -93,6 +94,8 @@ function Hidraulicos() {
         </Produtos>
 
         <Container>
+        <WhatsappButton />
+
           <Swiper
             autoHeight={true}
             centeredSlides={true}

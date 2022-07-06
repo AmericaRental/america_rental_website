@@ -12,6 +12,7 @@ import pia from "../images/pia/pia.svg";
 import pia2 from "../images/pia/pia2.svg";
 import pia3 from "../images/pia/pia3.svg";
 import TechnicalVisit from "../components/global/technical_visit";
+import WhatsappButton from "../components/global/whatsapp_button";
 
 function Pia() {
   const Banner = styled.div`
@@ -106,6 +107,7 @@ function Pia() {
           Produtos Para Construção Civil
         </Title>
       </Banner>
+      <WhatsappButton />
       <Main>
         <Container width="80%" margin="0 auto">
           <Container width="60%" direction="column" jContent="center">

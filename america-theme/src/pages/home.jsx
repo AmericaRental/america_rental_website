@@ -7,6 +7,7 @@ import Footer from "../components/global/footer";
 import Header from "../components/global/header";
 import Slider from "../components/home/slider";
 import Vitrine from "../components/home/vitrine";
+import WhatsappButton from "../components/global/whatsapp_button";
 
 
 function Home() {
@@ -15,6 +16,7 @@ function Home() {
     <>
       <Header />
       <main>
+        <WhatsappButton />
         <Banner />
         <Vitrine />
         <About />
