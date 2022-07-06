@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { menuItems } from "../../menu_itens";
 import "../../css/hamburger_menu.css";
-import * as reactiBi from 'react-icons/bi'
+import * as reactiBi from "react-icons/bi";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -42,7 +42,7 @@ const VisibilityButton = styled.button`
   height: 20px;
   margin: 0 auto;
   background-color: transparent;
-  border:none;
+  border: none;
   outline: none;
 `;
 
@@ -86,30 +86,42 @@ function SmallScreenMenu(props) {
           {menuItems.map((item, index) => {
             return item.submenu == null ? (
               <li className="menuItem" key={index}>
-                <Link to={item.url} className='link'>{item.title}</Link>
+                <Link to={item.url} className="link">
+                  {item.title}
+                </Link>
               </li>
             ) : (
               <li className="menuItem" key={index}>
-                {item.url !== null ? <Link to={item.url}>{item.title}</Link> : (item.title ) - (item.url)}
+                {item.title}
                 <VisibilityButton onClick={() => handleVisibility(1, visible)}>
-                  {menuopened ? <reactiBi.BiChevronUp /> : <reactiBi.BiChevronDown />}
+                  {menuopened ? (
+                    <reactiBi.BiChevronUp />
+                  ) : (
+                    <reactiBi.BiChevronDown />
+                  )}
                 </VisibilityButton>
                 <NdMenu display={menuopened ? "block" : "none"}>
                   {item.submenu.map((subitem, index) => {
                     return subitem.submenu == null ? (
                       <li className="menuItem" key={index}>
-                        <Link to={subitem.url} className='link'>{subitem.title}</Link>
+                        <Link to={subitem.url} className="link">
+                          {subitem.title}
+                        </Link>
                       </li>
                     ) : (
                       <li className="menuItem" key={index}>
-                        {subitem.title}{" "}
+                        <Link to={subitem.url} className="link">{subitem.title}</Link>
                         <VisibilityButton
                           onClick={() => {
                             handleVisibility(index + 2, visible);
                             console.log(index);
                           }}
                         >
-                          <p>{(index + 2 === 2 ? submenuOpened : ndsubmenuOpened)?<reactiBi.BiChevronUp /> :<reactiBi.BiChevronDown />}</p>
+                          {( index + 2 === 2 ? submenuOpened : ndsubmenuOpened )
+                          ? (
+                          <reactiBi.BiChevronUp />
+                          ) : (
+                          <reactiBi.BiChevronDown />)}
                         </VisibilityButton>
                         <RdMenu
                           display={
@@ -125,7 +137,9 @@ function SmallScreenMenu(props) {
                           {subitem.submenu.map((rditem, index) => {
                             return (
                               <li className="menuItem" key={index}>
-                                <Link to={rditem.url} className='link'>{rditem.title}</Link> 
+                                <Link to={rditem.url} className="link">
+                                  {rditem.title}
+                                </Link>
                               </li>
                             );
                           })}

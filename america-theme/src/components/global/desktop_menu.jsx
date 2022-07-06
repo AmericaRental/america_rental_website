@@ -1,11 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import { menuItems } from "../../menu_itens";
 
-function DesktopMenu(items) {
-  const Div = styled.div`
+const Div = styled.div`
     width: ${(props) => props.size || "max-content"};
     height: max-content;
     display: flex;
@@ -47,6 +46,10 @@ function DesktopMenu(items) {
     }
   `;
 
+function DesktopMenu(items) {
+  
+  const navigate = useNavigate();
+
   return (
     <Div
       jContent="space-between"
@@ -76,7 +79,7 @@ function DesktopMenu(items) {
                       key={index}
                     >
                       {subItem.submenu != null ? (
-                        <button className="nestedSubMenu">
+                        <button className="nestedSubMenu" onClick={() => navigate(subItem.url, {replace: true})}>
                           {subItem.title}
                           <ul className="lastLevel">
                             {subItem.submenu.map((item, index) => {
