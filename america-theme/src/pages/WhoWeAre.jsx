@@ -28,6 +28,9 @@ const WhoWeAre = () => {
       filter: ${(props) => props.hfilter || "none"};
       transition: 0.2s ease-in-out;
     }
+    @media (max-width: 1000px) {
+    width: ${(props) => props.mWidth || "100%"};
+    };
   `;
   const Banner = styled.div`
     width: 100%;
@@ -36,7 +39,31 @@ const WhoWeAre = () => {
     display: flex;
     justify-content: left;
     align-items: center;
+    @media (max-width: 1000px) {
+      height: 200px;
+    }
   `;
+  const BannerImg = styled.img`
+    width: ${(props) => props.width || "100%"};
+    height: auto;
+    z-index: ${(props) => props.zindex || "-1"};
+    left: 0;
+    top: 120px;
+    position: ${(props) => props.position || "absolute"};
+    margin: ${(props) => props.margin || "0 0 0 0"};
+    filter: ${(props) => props.filter || "none"};
+    transition: 0.2s ease-in-out;
+    &:hover {
+      filter: ${(props) => props.hfilter || "none"};
+      transition: 0.2s ease-in-out;
+    }
+    @media (max-width: 1000px){
+      height: 200px;
+      object-fit: cover;
+      top: 90px;
+    };
+  `;
+
   const Title = styled.h1`
     font-family: ${(props) => props.family || "Inter"};
     color: ${(props) => props.color || "#fafafa"};
@@ -44,6 +71,9 @@ const WhoWeAre = () => {
     letter-spacing: 0.03em;
     margin: ${(props) => props.margin || "0 0 0 0"};
     font-weight: ${(props) => props.weight || "400"};
+    @media (max-width: 1000px){
+      font-size: ${(props) => props.mSize || "80px"};
+    }
   `;
 
   const NossaEmpresa = styled.article`
@@ -102,10 +132,10 @@ const WhoWeAre = () => {
         <WhatsappButton />
 
         <Banner>
-          <Title margin="0 0% 0% 5%" family="Montserrat">
+          <Title margin="0 0% 0% 5%" mSize='4em' family="Montserrat">
             Quem Somos
           </Title>
-          <Img src={banner} alt="banner" />
+          <BannerImg src={banner} alt="banner" />
         </Banner>
         <NossaEmpresa>
           <Welcome>SEJA MUITO BEM VINDO</Welcome>
@@ -189,6 +219,7 @@ const WhoWeAre = () => {
               src={bubble1}
               zindex="0"
               margin="0px 3%"
+              mWidth= "31%"
             />
             <Img
               width="320px"
@@ -196,6 +227,7 @@ const WhoWeAre = () => {
               src={bubble2}
               zindex="0"
               margin="0px 3%"
+              mWidth= "31%"
             />
             <Img
               width="320px"
@@ -203,6 +235,7 @@ const WhoWeAre = () => {
               src={bubble3}
               zindex="0"
               margin="0px 3%"
+              mWidth= "31%"
             />
           </Div>
         </Section>
