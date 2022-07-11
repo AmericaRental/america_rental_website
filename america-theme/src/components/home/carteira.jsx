@@ -33,7 +33,9 @@ export default class Carteira extends Component {
       margin: 30px 0;
       @media (max-width: 1000px) {
         font-size: 1.25rem;
-        width: 85%;
+        width: 95%;
+        letter-spacing: .065rem;
+        text-align: center;
       }
     `;
 
@@ -41,7 +43,7 @@ export default class Carteira extends Component {
       font-size: 32px;
       font-weight: 600;
       @media (max-width: 1000px) {
-        font-size: 1.35rem;
+        font-size: 1.335rem;
       }
     `;
 
@@ -49,7 +51,7 @@ export default class Carteira extends Component {
       width: 60vw;
       margin-top: 20px;
       @media (max-width: 1000px) {
-        width: 100vw;
+        width: 100%;
       }
     `;
 
@@ -59,7 +61,7 @@ export default class Carteira extends Component {
         <P>
           Nesses mais de 20 anos de mercado,{" "}
           <Strong>consolidamos parcerias</Strong> e
-          <Strong>fidelizamos clientes</Strong>,{" "}
+          <Strong> fidelizamos clientes</Strong>,{" "}
           <Strong>realizamos os mais diversos tipos de eventos</Strong> e
           implantamos os nossos equipamentos em{" "}
           <Strong> locais que ninguém imaginaria ser possível</Strong>.<br />

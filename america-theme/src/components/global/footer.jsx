@@ -34,6 +34,10 @@ const Section = styled.section`
   flex-direction: column;
   padding: 10px 0;
   height: 250px;
+  @media (max-width: 1000px) {
+    height: max-content;
+    width: 90%;
+  }
 `;
 
 const Title = styled.p`
@@ -64,6 +68,10 @@ const Grid = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
+  @media (max-width: 1000px) {
+    width: 90%;
+    
+  }
 `;
 
 const HR = styled.hr`
@@ -107,6 +115,18 @@ const Img = styled.img`
   width: 37px;
   height: 50px;
   margin: 0.6rem 2rem;
+  @media (max-width: 1000px) {
+    margin: 0;
+    margin-bottom: 20px;
+    margin-top: 2%;
+    flex-basis: 20%;
+  }
+`;
+
+const MHR = styled.hr`
+  width: 90%;
+  border: 1px solid #FAFAFA;
+  margin: 10px 0;
 `;
 function Footer() {
   const [width] = useWindowChange();
@@ -124,7 +144,7 @@ function Footer() {
           <Input />
           <Button>Enviar</Button>
         </Section>
-        {width <= 1000 ? <></> : <HR />}
+        {width <= 1000 ? <MHR/> : <HR />}
         <Section>
           <Title family="Nunito" size="32px">
             Menu
@@ -144,7 +164,7 @@ function Footer() {
             </P>
           </Div>
         </Section>
-        {width <= 1000 ? <></> : <HR />}
+        {width <= 1000 ? <MHR/> : <HR />}
         <Section>
           <Title family="Nunito" size="32px">
             Produtos
@@ -170,7 +190,7 @@ function Footer() {
             </P>
           </Div>
         </Section>
-        {width <= 1000 ? <></> : <HR />}
+        {width <= 1000 ? <MHR/> : <HR />}
         <Section>
           <Title family="Nunito" size="32px">
             Mídias Sociais
