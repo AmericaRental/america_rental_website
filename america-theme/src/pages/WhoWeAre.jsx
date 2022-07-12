@@ -108,6 +108,9 @@ const WhoWeAre = () => {
     line-height: 33.4px;
     margin: ${(props) => props.margin || "0"};
     text-align: justify;
+    @media (max-width: 1000px) {
+      width: ${(props) => props.mWidth || "80%"};
+    }
   `;
 
   const Section = styled.section`
@@ -140,7 +143,7 @@ const WhoWeAre = () => {
         <NossaEmpresa>
           <Welcome>SEJA MUITO BEM VINDO</Welcome>
           <TitleOurCompany>SOBRE NOSSA EMPRESA</TitleOurCompany>
-          <P>
+          <P mWidth='100%'>
             A <strong>América Rental</strong> é hoje reconhecida como a
             principal empresa atuante no ramo de locação de{" "}
             <strong>Sanitários Portáteis do Estado de São Paulo</strong>. <br />
@@ -165,11 +168,12 @@ const WhoWeAre = () => {
             margin="2.45% 0px 4% 0px"
             weight="700"
             family="Montserrat"
+            mSize='4em'
           >
             ESTRUTURA
           </Title>
-          <P width="62.5%" margin="0 0 .7% 0">
-            Todos o reconhecimento conquistado pela{" "}
+          <P width="62.5%" margin="0 0 .7% 0" mWidth='83%'>
+            Todo o reconhecimento conquistado pela{" "}
             <strong>América Rental</strong> em todos esses anos de atuação se
             deve a um <strong>grande investimento</strong> em áreas importantes
             e especificas, estas nos tornam uma{" "}
@@ -177,7 +181,7 @@ const WhoWeAre = () => {
             da qual grandes empresas depositam confiança em nosso trabalho.
             <br />
           </P>
-          <P width="62.5%" margin="0 0 .7% 0">
+          <P width="62.5%" margin="0 0 .7% 0" mWidth='83%'>
             {" "}
             <strong>SEDE</strong>: A <strong>América Rental </strong>está
             localizada em sede própria na cidade de
@@ -187,7 +191,7 @@ const WhoWeAre = () => {
             <strong>500km da cidade de São Paulo </strong>.
             <br />
           </P>
-          <P width="62.5%" margin="0 0 .7% 0">
+          <P width="62.5%" margin="1% 0 .7% 0" mWidth='83%'>
             {" "}
             <strong>EQUIPAMENTOS</strong>: Nossos equipamentos são{" "}
             <strong>Modernos e de Primeiríssima Qualidade</strong>. Possuímos
@@ -199,7 +203,7 @@ const WhoWeAre = () => {
             </strong>{" "}
             <br />
           </P>
-          <P width="62.5%" margin="0 0 .7% 0">
+          <P width="62.5%" margin="0 0 .7% 0" mWidth='83%'>
             <strong>EQUIPE</strong>: Nossos{" "}
             <strong>colaboradores são treinados</strong> periodicamente para a
             execução de nossos serviços, possuímos todos os{" "}
@@ -219,7 +223,7 @@ const WhoWeAre = () => {
               src={bubble1}
               zindex="0"
               margin="0px 3%"
-              mWidth= "31%"
+              mWidth= "33%"
             />
             <Img
               width="320px"
@@ -227,7 +231,7 @@ const WhoWeAre = () => {
               src={bubble2}
               zindex="0"
               margin="0px 3%"
-              mWidth= "31%"
+              mWidth= "33%"
             />
             <Img
               width="320px"
@@ -235,7 +239,7 @@ const WhoWeAre = () => {
               src={bubble3}
               zindex="0"
               margin="0px 3%"
-              mWidth= "31%"
+              mWidth= "33%"
             />
           </Div>
         </Section>
@@ -245,10 +249,11 @@ const WhoWeAre = () => {
             color="#1e547e"
             weight="700"
             margin="3% 0 4.55% 0"
+            mSize='3.5em'
           >
             SUSTENTABILIDADE
           </Title>
-          <P width="65%" size="1.3rem">
+          <P width="65%" size="1.3rem" mWidth='83%'>
             A nossa<strong> política de conservação do meio ambiente </strong> é
             a sua única forma de garantir a sustentabilidade ambiental de forma
             efetiva e com resultados em médio e longo prazo. Ambientalmente
