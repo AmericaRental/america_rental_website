@@ -27,8 +27,7 @@ import { Autoplay, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import WhatsappButton from "../components/global/whatsapp_button";
 
-function Quimicos() {
-  const Banner = styled.img`
+const Banner = styled.img`
     width: 100vw;
   `;
   const Produtos = styled.section`
@@ -39,6 +38,11 @@ function Quimicos() {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    @media (max-width: 1000px) {
+      height: max-content;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
   `;
 
   const Container = styled.div`
@@ -50,6 +54,11 @@ function Quimicos() {
     flex-direction: ${(props) => props.direction || "column"};
     align-items: center;
     justify-content: ${(props) => props.jcontent || "center"};
+
+    @media (max-width: 1000px) {
+    width: ${(props) => props.mWidth || "100%"};
+      
+    }
   `;
 
   const P = styled.p`
@@ -97,6 +106,9 @@ function Quimicos() {
       transform: scale(110%);
     }
   `;
+
+function Quimicos() {
+  
   return (
     <>
       <Header />
