@@ -15,10 +15,9 @@
   align-items: center;
   width: 100vw;
   height: max-content;
-  @media (max-width: 1280px) {
-    height: 370px;
-  }
 }
+
+
 
 .banner {
   width: 100%;
@@ -115,5 +114,11 @@
   .mySwiper > .swiper-wrapper > .swiper-slide > img {
     width: 14%;
     height: 50px;
+  }
+
+  .swiper-slide > img {
+    height: auto;
+    margin: 0;
+    width: 100%;
   }
 }

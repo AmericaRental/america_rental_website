@@ -1,18 +1,41 @@
-.cabine-swiper {
+#cabineStd {
   height: 500px;
 }
-.cabine-swiper > .swiper-wrapper {
+#cabineStd > .swiper-wrapper {
   height: 500px;
 }
 
-.cabine-swiper > .swiper-slide {
+#cabineStd> .swiper-slide {
   width: 100%;
   height: 500px;
 }
 
-.cabine-swiper > .swiper-slide > img {
+#cabineStd > .swiper-slide > img {
   width: 100%;
   height: 500px;
   object-fit: cover;
   margin: 0;
+}
+
+
+@media screen and (max-width:1000px) {
+  #cabineStd {
+    height: 300px;
+  }
+  #cabineStd > .swiper-wrapper {
+    height: 300px;
+  }
+  
+  #cabineStd > .swiper-slide {
+    width: 100%;
+    height: 330px;
+  }
+  
+  #cabineStd > .swiper-slide > img {
+    width: 100vw;
+    height: 300px;
+    object-fit: cover; 
+    margin: 0;
+  }
+  
 }
