@@ -30,7 +30,7 @@ import WhatsappButton from "../components/global/whatsapp_button";
 const Banner = styled.img`
     width: 100vw;
   `;
-  const Produtos = styled.section`
+const Produtos = styled.section`
     width: 100vw;
     height: 350px;
     background-color: #ededed;
@@ -45,7 +45,7 @@ const Banner = styled.img`
     }
   `;
 
-  const Container = styled.div`
+const Container = styled.div`
     width: ${(props) => props.width || "100vw"};
     height: ${(props) => props.height || "fit-content"};
     margin: ${(props) => props.margin || "0"};
@@ -56,24 +56,25 @@ const Banner = styled.img`
     justify-content: ${(props) => props.jcontent || "center"};
 
     @media (max-width: 1000px) {
-    width: ${(props) => props.mWidth || "100%"};
-      
+      width: ${(props) => props.mWidth || "100%"};
+      flex-direction: ${(props) => props.mDirection || "column"};
+      margin: ${(props) => props.mMargin || "0"};
     }
   `;
 
-  const P = styled.p`
+const P = styled.p`
     font-size: 1.4rem;
     font-family: "Inter";
     line-height: 23px;
     text-align: justify;
   `;
 
-  const Topper = styled.img`
+const Topper = styled.img`
     width: 100%;
     height: auto;
   `;
 
-  const Grid = styled.article`
+const Grid = styled.article`
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -81,7 +82,7 @@ const Banner = styled.img`
     margin: 0 auto;
   `;
 
-  const GridItem = styled.div`
+const GridItem = styled.div`
     width: 250px;
     height: 250px;
     display: flex;
@@ -91,14 +92,17 @@ const Banner = styled.img`
     margin: 2.5%;
   `;
 
-  const Img = styled.img`
+const Img = styled.img`
     width: ${(props) => props.width || "13%"};
     height: ${(props) => props.width || "13%"};
     transition: 600ms ease-in-out;
     padding: 10px;
+    @media (max-width: 1000px) {
+      width: ${(props) => props.mWidth || "18.5%"}
+    }
   `;
 
-  const ImgGrid = styled.img`
+const ImgGrid = styled.img`
     width: 90%;
     height: 90%;
     transition: 400ms ease-in-out;
@@ -108,13 +112,13 @@ const Banner = styled.img`
   `;
 
 function Quimicos() {
-  
+
   return (
     <>
       <Header />
       <Banner src={banner} alt="banner" />
       <Produtos>
-        <Container width="83%" jcontent="space-evenly" direction="row">
+        <Container width="83%" jcontent="space-evenly" direction="row" mDirection='row'>
           <Img src={standard} alt="modelo standard" />
           <Img src={luxo} alt="modelo luxo" />
           <Img src={extra_luxo} alt="modelo extra luxo" />
@@ -162,7 +166,7 @@ function Quimicos() {
               </SwiperSlide>
             </Swiper>
           </Container>
-          <Container width="55%" padding="0 10px 0 0px">
+          <Container width="55%" padding="0 10px 0 0px" mWidth='90%' mMargin=' 0 0 25px 0'>
             <P>
               <strong>
                 Como o Banheiro Químico não está ligado na rede de esgoto ele
