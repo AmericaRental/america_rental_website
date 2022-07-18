@@ -28,12 +28,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import WhatsappButton from "../components/global/whatsapp_button";
 
 const Banner = styled.img`
-    width: 100vw;
+    width: 100%;
   `;
 const Produtos = styled.section`
-    width: 100vw;
+    width: 100%;
     height: 350px;
-    background-color: #ededed;
+    background-color: #ededed;s
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;

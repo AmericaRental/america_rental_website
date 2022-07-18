@@ -46,7 +46,7 @@ const Container = styled.div`
   background-color: ${(props) => props.background || "transparent"};
   @media (max-width: 1000px) {
     width: ${(props) => props.mWidth || " 100%"};
-    padding: ${props => props.mPadding || '0'};
+    padding: ${(props) => props.mPadding || "0"};
     align-items: center;
   }
 `;
@@ -76,8 +76,15 @@ const H1 = styled.h1`
   margin: ${(props) => props.margin || "0"};
   @media screen {
     font-size: ${(props) => props.mSize || "2rem"};
-    width: 52%;
+    width: 100%;
+    text-align: center;
   }
+`;
+
+const UL = styled.ul`
+  width: 80%;
+  margin: 0 auto;
+  text-align: justify;
 `;
 
 const Li = styled.li`
@@ -124,17 +131,17 @@ function Standard() {
                 margin="-2% 0 2% 0"
                 mMargin="0px 0 10px 20px"
               />
-              <Container direction='column' mPadding='0 20px'>
+              <Container direction="column" mPadding="0 8px">
                 <P
                   txtTransform="Uppercase"
                   mMargin="15px auto"
                   size="1.2rem"
                   mSize="1.15rem"
-                  mTxtAlign='center'
+                  mTxtAlign="center"
                 >
                   Cabines de banheiro químico
                 </P>
-                <H1 margin="0 auto" size="2.2rem" mSize='1.8rem'>
+                <H1 margin="0 auto" size="2.2rem" mSize="1.8rem">
                   modelo standard
                 </H1>
               </Container>
@@ -142,27 +149,70 @@ function Standard() {
             <P
               color="black"
               width={"60%"}
-              mWidth="85%"
+              mWidth="90%"
               mTxtAlign="justify"
               line="25px"
               margin="15px 0"
               mMargin="25px 0 10px 0"
               size="1.25rem"
-              mSize="1.5rem"
+              mSize="1.33rem"
             >
-              As cabines de <strong>modelo Luxo</strong> possuem um{" "}
-              <strong>sistema de descarga,</strong> impedindo a visualização dos
-              dejetos no interior do tanque.
+              <strong>As cabines de modelos Standard são as mais simples.</strong> Sendo o modelo
+              de entrada,<strong>{" "}normalmente usada para obras{" "}</strong>em geral, não possuem
+              descarga.<br/> Contém um produto químico de tonalidade azul escuro, que
+              inibe a visualização dos resíduos, sendo possível ver os resíduos
+              no interior do tanque.<br/> A <strong>quantidade de limpezas</strong> é determinada pela <strong>quantidade média de usuários</strong>, sendo o programa mínimo composto por
+              1 limpeza por semana, não podendo ser menos pois esta é a validade
+              do produto químico usado.<br/>Na manutenção é realizada a reposição
+              dos insumos, sucção do tanque e a limpeza e lavagem interna da
+              cabine.
             </P>
           </Container>
 
-          <Container direction='column'>
-            <Container background='#143854' margin='0 0 2% 0' mPadding='10px 0'>
-              <P color='#fafafa' family='Montserrat'>
+          <Container direction="column">
+            <Container background="#143854" margin="0 0 2% 0" mPadding="10px 0">
+              <P color="#fafafa" family="Montserrat">
                 Especificação do Produto
               </P>
             </Container>
+            <Container direction='column'>
+              <Img
+                src={standard2}
+                alt="cabine standard"
+                width="450px"
+                margin="0 3.5% 0 0"
+              />
+
+              <Container direction="column" width="35%" itemsAlign="left">
+                <UL>
+                  <Li>Caixa de dejetos com assento</Li>
+                  <Li>Mictório</Li>
+                  <Li>Suporte para papel Higiênico</Li>
+                  <Li>
+                    Cobertura Translúcida para aproveitamento de luz externa
+                  </Li>
+                  <Li>
+                    Cobertura com canaletas para impedir a entrada de chuva
+                  </Li>
+                  <Li>Tubo Respiratório</Li>
+                  <Li>Trinco indicador Ocupado e Livre</Li>
+                  <Li>Ventilação interna por telas</Li>
+                  <Li>Piso Antiderrapante</Li>
+                  <Li>Identificação Masculino e Feminino</Li>
+                </UL>
+
+                <H1 margin="5% 0">dimensões do produto</H1>
+                <P color="#1e5680" size="1.5rem">
+                  A 2,24m X L 1,22m X P 1,16m
+                </P>
+                <P color="#1e5680" size="1.2rem" margin="3% 0 0 0">
+                  74Kg
+                </P>
+              </Container>
+            </Container>
           </Container>
+
+          <TechnicalVisit />
 
         </Main>
       ) : (
