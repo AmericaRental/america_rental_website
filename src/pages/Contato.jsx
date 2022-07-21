@@ -6,6 +6,7 @@ import styled from "styled-components";
 
 import contato from "../images/contato.svg";
 import WhatsappButton from "../components/global/whatsapp_button";
+import StyledFField from "../components/global/styled_form_field";
 
 const Banner = styled.div`
   width: 100%;
@@ -68,21 +69,22 @@ const H1 = styled.h1`
   font-size: 1.237rem;
 `;
 
-const Button = styled.button`
-  width: auto;
-  margin: 10px auto;
-  padding: 10px;
-  border: 3.5px solid #1d436b;
-  background-color: #fff;
-  border-radius: 20px;
-  font-size: 1.2rem;
-  color: #1d436b;
-  font-family: "Montserrat";
-`;
+// const Button = styled.button`
+//   width: auto;
+//   margin: 10px auto;
+//   padding: 10px;
+//   border: 3.5px solid #1d436b;
+//   background-color: #fff;
+//   border-radius: 20px;
+//   font-size: 1.2rem;
+//   color: #1d436b;
+//   font-family: "Montserrat";
+// `;
 
 const Form = styled.form`
   width: 100%;
   display: flex;
+  border: 1px solid black;
 `;
 
 function Contato() {
@@ -109,15 +111,9 @@ function Contato() {
             Para qualquer informação, dúvida ou comentário preencha o formulário
             abaixo
           </H1>
-          {/*<Button
-            onClick={() =>
-              (window.location = "mailto:vendas@americarental.com.br")
-            }
-          >
-            Enviar E-Mail
-          </Button> */}
-
-          <Form></Form>
+          <Form>
+            <StyledFField alt='email' input='email' text='Email' width='50%'/>
+          </Form>
         </Container>
       </main>
       <Footer />
