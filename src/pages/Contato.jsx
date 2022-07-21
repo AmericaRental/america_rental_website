@@ -82,9 +82,11 @@ const H1 = styled.h1`
 // `;
 
 const Form = styled.form`
-  width: 100%;
+  width: 80%;
   display: flex;
-  border: 1px solid black;
+  flex-wrap: wrap;
+  flex-basis: 50%;
+  margin: auto;
 `;
 
 function Contato() {
@@ -112,7 +114,11 @@ function Contato() {
             abaixo
           </H1>
           <Form>
-            <StyledFField alt='email' input='email' text='Email' width='50%'/>
+            <StyledFField alt="cliente" text="Cliente *" />
+            <StyledFField alt="nome completo" text="Nome Completo *" />
+            <StyledFField alt="email" input="email" text="Email *" />
+            <StyledFField alt="telefone de contato" text="Telefone para contato *" />
+            <StyledFField alt='mensagem' text='mensagem'/>
           </Form>
         </Container>
       </main>

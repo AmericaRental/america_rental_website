@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import React, { useState } from "react";
 import styled from "styled-components";
 
@@ -9,6 +10,7 @@ const Input = styled.input`
   font-family: "Montserrat";
   outline: none;
   font-size: 1rem;
+  margin: 0 10px;
 `;
 
 const P = styled.p`
@@ -19,8 +21,11 @@ const P = styled.p`
 
 const Container = styled.article`
   display: flex;
-  width: ${(props) => props.width};
+  /* width: ${(props) => props.width}; */
   flex-direction: column;
+  flex: 1;
+  flex-basis: 50%;
+  margin: 10px 0;
 `;
 
 function StyledFField(props) {
@@ -28,19 +33,24 @@ function StyledFField(props) {
   const [email, setEmail] = useState("");
 
   const emailValidator = new RegExp(
-    "/[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/"
+    "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,63}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
   );
 
   const emailValidatorFn = () => {
-    if (!emailValidator.test(email)) {
+    console.log(`before -> ${border}`);
+    if (!emailValidator.test(email) && email.length > 1) {
       setBorder("2px solid red");
     } else {
-      setBorder("2px solid rgba(0, 0, 0, 0.51)");
+      email.length > 1
+        ? setBorder("2px solid rgba(0, 0, 0, 1)")
+        : setBorder("2px solid rgba(0, 0, 0, 0.51)");
     }
+    console.log(`length -> ${email.length}`);
+    console.log(`after -> ${border}`);
   };
 
-  return (
-    <Container width={props.width || "100%"}>
+  return props.type !== "message" ? (
+    <Container>
       <P>{props.text}</P>
       <Input
         alt={props.alt}
@@ -53,6 +63,12 @@ function StyledFField(props) {
           }
         }}
       />
+    </Container>
+  ) : (
+    <Container>
+      <P>{props.text}</P>
+
+      <textarea />
     </Container>
   );
 }
