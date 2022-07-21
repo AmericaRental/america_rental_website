@@ -80,6 +80,11 @@ const Button = styled.button`
   font-family: "Montserrat";
 `;
 
+const Form = styled.form`
+  width: 100%;
+  display: flex;
+`;
+
 function Contato() {
   return (
     <>
@@ -101,16 +106,18 @@ function Contato() {
 
         <Container>
           <H1>
-            Para qualquer informação, dúvida ou comentário clique no botão
+            Para qualquer informação, dúvida ou comentário preencha o formulário
             abaixo
           </H1>
-          <Button
+          {/*<Button
             onClick={() =>
               (window.location = "mailto:vendas@americarental.com.br")
             }
           >
             Enviar E-Mail
-          </Button>
+          </Button> */}
+
+          <Form></Form>
         </Container>
       </main>
       <Footer />
