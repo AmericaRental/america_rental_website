@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import Header from "../components/global/header";
 import Footer from "../components/global/footer";
@@ -7,6 +7,8 @@ import styled from "styled-components";
 import contato from "../images/contato.svg";
 import WhatsappButton from "../components/global/whatsapp_button";
 import StyledFField from "../components/global/styled_form_field";
+
+import api from "../api/axios";
 
 const Banner = styled.div`
   width: 100%;
@@ -69,19 +71,19 @@ const H1 = styled.h1`
   font-size: 1.237rem;
 `;
 
-// const Button = styled.button`
-//   width: auto;
-//   margin: 10px auto;
-//   padding: 10px;
-//   border: 3.5px solid #1d436b;
-//   background-color: #fff;
-//   border-radius: 20px;
-//   font-size: 1.2rem;
-//   color: #1d436b;
-//   font-family: "Montserrat";
-// `;
+const Button = styled.button`
+  width: auto;
+  margin: 15px auto;
+  padding: 10px 15px;
+  border: 3.5px solid #1d436b;
+  background-color: #fff;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  color: #1d436b;
+  font-family: "Montserrat";
+`;
 
-const Form = styled.form`
+const Form = styled.section`
   width: 80%;
   display: flex;
   flex-wrap: wrap;
@@ -89,7 +91,69 @@ const Form = styled.form`
   margin: auto;
 `;
 
+const Input = styled.input`
+  border: ${(props) => props.border};
+  border-radius: 14px;
+  padding: 0.6rem 1rem;
+  transition: 0.5s ease-in-out;
+  font-family: "Montserrat";
+  outline: none;
+  font-size: 1rem;
+  margin: 0 10px;
+`;
+
+const P = styled.p`
+  font-family: "Inter";
+  font-size: 1rem;
+  margin: 5px 0px 5px 10px;
+`;
+
+const FrmContainer = styled.article`
+  display: flex;
+  /* width: ${(props) => props.width}; */
+  flex-direction: column;
+  flex: 1;
+  flex-basis: 50%;
+  margin: 10px 0;
+`;
+
+const Textarea = styled.textarea`
+  border: ${(props) => props.border};
+  border-radius: 14px;
+  padding: 0.6rem 1rem;
+  transition: 0.5s ease-in-out;
+  font-family: "Montserrat";
+  outline: none;
+  font-size: 1rem;
+  margin: 0 10px;
+  height: 200px;
+  resize: vertical;
+`;
+
 function Contato() {
+  const [border, setBorder] = useState("2px solid rgba(0, 0, 0, 0.51)");
+  const [email, setEmail] = useState("");
+  const [nome, setNome] = useState("");
+  const [cliente, setCliente] = useState("");
+  const [telefone, setTelefone] = useState("");
+  const [mensagem, setMensagem] = useState("second");
+
+  const emailValidator = new RegExp(
+    "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,63}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
+  );
+
+  const emailValidatorFn = (email) => {
+    console.log(`before -> ${border}`);
+    if (!emailValidator.test(email) && email.length > 1) {
+      setBorder("2px solid red");
+    } else {
+      email.length > 1
+        ? setBorder("2px solid rgba(0, 0, 0, 1)")
+        : setBorder("2px solid rgba(0, 0, 0, 0.51)");
+    }
+    console.log(`length -> ${email.length}`);
+    console.log(`after -> ${border}`);
+  };
   return (
     <>
       <Header />
@@ -114,12 +178,72 @@ function Contato() {
             abaixo
           </H1>
           <Form>
-            <StyledFField alt="cliente" text="Cliente *" />
-            <StyledFField alt="nome completo" text="Nome Completo *" />
-            <StyledFField alt="email" input="email" text="Email *" />
-            <StyledFField alt="telefone de contato" text="Telefone para contato *" />
-            <StyledFField alt='mensagem' text='mensagem'/>
+            <FrmContainer>
+              <P>Cliente</P>
+              <Input
+                alt="cliente"
+                inputMode="text"
+                border={"2px solid rgba(0, 0, 0, 0.51)"}
+                onChange={(c) => {setCliente(c)}}
+              />
+            </FrmContainer>
+
+            <FrmContainer>
+              <P>Nome completo</P>
+              <Input
+                alt="nome completo"
+                inputMode="text"
+                border="2px solid rgba(0, 0, 0, 0.51)"
+                onChange={(n) => {setNome(n)}}
+              />
+            </FrmContainer>
+
+            <FrmContainer>
+              <P>E-mail</P>
+              <Input
+                alt="email"
+                inputMode="text"
+                border={border}
+                onChange={(e) => {
+                  emailValidatorFn(e);
+                  setEmail(e)
+                  console.log(e);
+                }}
+              />
+            </FrmContainer>
+
+            <FrmContainer>
+              <P>Telefone</P>
+              <Input
+                alt="Telefone"
+                inputMode="text"
+                border="2px solid rgba(0, 0, 0, 0.51)"
+                onChange={(t) => {setTelefone(t)}}
+              />
+            </FrmContainer>
+
+
+            <FrmContainer>
+              <P>Mensagem</P>
+              <Textarea
+                alt="Mensagem"
+                inputMode="text"
+                border="2px solid rgba(0, 0, 0, 0.51)"
+                onChange={(t) => {setTelefone(t)}}
+              />
+            </FrmContainer>
+
+            
           </Form>
+          <Button
+              onClick={useEffect(() => {
+                api.post("/send", {
+                  subject: `América rental - formulário de contato, cliente "${nome} - ${cliente}"`,
+                  message: `<p>${mensagem}<p><br/><br/>Telefone - ${telefone}`,
+                  receivers: contato["muri157k@gmail.com"],
+                });
+              }, [])}
+            >Enviar</Button>
         </Container>
       </main>
       <Footer />

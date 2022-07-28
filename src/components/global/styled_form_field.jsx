@@ -29,25 +29,6 @@ const Container = styled.article`
 `;
 
 function StyledFField(props) {
-  const [border, setBorder] = useState("2px solid rgba(0, 0, 0, 0.51)");
-  const [email, setEmail] = useState("");
-
-  const emailValidator = new RegExp(
-    "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,63}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
-  );
-
-  const emailValidatorFn = () => {
-    console.log(`before -> ${border}`);
-    if (!emailValidator.test(email) && email.length > 1) {
-      setBorder("2px solid red");
-    } else {
-      email.length > 1
-        ? setBorder("2px solid rgba(0, 0, 0, 1)")
-        : setBorder("2px solid rgba(0, 0, 0, 0.51)");
-    }
-    console.log(`length -> ${email.length}`);
-    console.log(`after -> ${border}`);
-  };
 
   return props.type !== "message" ? (
     <Container>
@@ -55,13 +36,9 @@ function StyledFField(props) {
       <Input
         alt={props.alt}
         inputMode={props.input || "text"}
-        border={border}
-        onChange={(e) => {
-          if (props.input === "email") {
-            setEmail(e.target.value);
-            emailValidatorFn();
-          }
-        }}
+        border={props.border}
+        id={props.id}
+        onChange={props.onchange}
       />
     </Container>
   ) : (
