@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import Header from "../components/global/header";
 import Footer from "../components/global/footer";
@@ -6,7 +6,6 @@ import styled from "styled-components";
 
 import contato from "../images/contato.svg";
 import WhatsappButton from "../components/global/whatsapp_button";
-import StyledFField from "../components/global/styled_form_field";
 
 import api from "../api/axios";
 
@@ -130,17 +129,6 @@ const Textarea = styled.textarea`
   resize: vertical;
 `;
 
-const SendMail = (nome, email, telefone, cliente, mensagem) => {
-  console.log(`${nome} - ${email} - ${telefone} - ${cliente} - ${mensagem}`);
-  useEffect(() => {
-    api.post("/send", {
-      subject: `América rental - formulário de contato, cliente "${nome} - ${cliente}"`,
-      message: `<p>${mensagem}<p><br/><br/>Telefone - ${telefone}`,
-      receivers: contato["muri157k@gmail.com"],
-    });
-  }, []);
-};
-
 function Contato() {
   const [border, setBorder] = useState("2px solid rgba(0, 0, 0, 0.51)");
   const [email, setEmail] = useState("");
@@ -259,9 +247,13 @@ function Contato() {
                   responder para - ${email}
                   ou ligar para - ${telefone}
                   `,
-                  receivers: ["muri157k@gmail.com","cardoso.murilo2002@gmail.com"],
+                  receivers: [
+                    "muri157k@gmail.com",
+                    "cardoso.murilo2002@gmail.com",
+                  ],
                 })
-                .then(() => console.log("enviado com sucesso"))
+                .then(() => alert("E-mail enviado com sucesso!"))
+                .catch((e) => alert(e.target.value))
             }
           >
             Enviar
