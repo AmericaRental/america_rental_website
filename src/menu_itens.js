@@ -10,6 +10,11 @@ export const menuItems = [
     submenu: null,
   },
   {
+    title: "Orçamento",
+    url: "/orcamento",
+    submenu: null,
+  },
+  {
     title: "Produtos",
 
     submenu: [

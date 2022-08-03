@@ -73,7 +73,7 @@
   color: #1e547e;
   transition: cubic-bezier(0.88, 0.15, 0.49, 1.05) 300ms;
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 .navlist li:hover > ul {
@@ -166,7 +166,7 @@
   color: #1e547e;
   transition: cubic-bezier(0.88, 0.15, 0.49, 1.05) 300ms;
   font-weight: 700;
-  font-size: calc(1rem + 5%);
+  font-size: 1.25rem;
   filter: drop-shadow(-1px 6px 20px #1439556f);
 }
 

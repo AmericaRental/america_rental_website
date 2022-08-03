@@ -33,7 +33,7 @@ const Banner = styled.img`
 const Produtos = styled.section`
     width: 100%;
     height: 350px;
-    background-color: #ededed;s
+    background-color: #ededed;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;

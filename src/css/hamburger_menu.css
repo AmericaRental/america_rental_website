@@ -108,5 +108,6 @@ input[type='checkbox']:checked ~ .bar:nth-of-type(3){
 .link{
     text-decoration: none;
     font-size: 1.2rem;
-    color: black;
+    color: #515151;
+    transition: cubic-bezier(0.88, 0.15, 0.49, 1.05) 300ms;
 }

@@ -252,7 +252,7 @@ function Contato() {
                     "cardoso.murilo2002@gmail.com",
                   ],
                 })
-                .then(() => alert("E-mail enviado com sucesso!"))
+                .then(_ => alert("E-mail enviado com sucesso!"))
                 .catch((e) => alert(e.target.value))
             }
           >

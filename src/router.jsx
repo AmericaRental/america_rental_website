@@ -16,6 +16,7 @@ import Luxo from "./pages/quimicos/luxo";
 import PNE from "./pages/quimicos/pne";
 import Standard from "./pages/quimicos/stardard";
 import Contato from "./pages/Contato";
+import Orcamentos from "./pages/Orcamentos";
 
 const AppRoutes = (_) => {
   return (
@@ -49,10 +50,9 @@ const AppRoutes = (_) => {
           element={<BilheteriaDupl />}
         />
 
-        <reactRouter.Route
-          path="/contato"
-          element={<Contato />}
-        />
+        <reactRouter.Route path="/contato" element={<Contato />} />
+
+        <reactRouter.Route path="/orcamento" element={<Orcamentos />} />
       </reactRouter.Routes>
     </>
   );

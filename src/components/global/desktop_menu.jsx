@@ -13,7 +13,7 @@ const Div = styled.div`
     align-items: center;
     padding: ${(props) => props.padding || "0px"};
     margin: ${(props) => props.margin || "0px"};
-
+    transition: cubic-bezier(0.88, 0.15, 0.49, 1.05) 300ms;
     @media (max-width: 1440px) {
       justify-content: ${(props) => props.mjContent || "Center"};
       margin: ${(props) => props.mMargin || "0"};
@@ -29,7 +29,7 @@ const Div = styled.div`
     height: fit-content;
     background-color: transparent;
     color: #515151;
-    font-size: ${(props) => props.fontsize || "17px"};
+    font-size: 1.2rem;
     font-family: "Inter", sans-serif;
     font-weight: 300;
     transition: cubic-bezier(0.88, 0.15, 0.49, 1.05) 300ms;
@@ -41,7 +41,7 @@ const Div = styled.div`
       color: #1e547e;
       transition: cubic-bezier(0.88, 0.15, 0.49, 1.05) 300ms;
       font-weight: 700;
-      font-size: calc(${(props) => props.fontsize || "17px"} + 5%);
+      font-size: 1.2rem;
       filter: drop-shadow(-1px 6px 20px #1439556f);
     }
   `;
@@ -79,7 +79,7 @@ function DesktopMenu(items) {
                       key={index}
                     >
                       {subItem.submenu != null ? (
-                        <button className="nestedSubMenu" onClick={() => navigate(subItem.url, {replace: true})}>
+                        <button className="nestedSubMenu" onClick={() => navigate(subItem.submenu.url, {replace: true})}>
                           {subItem.title}
                           <ul className="lastLevel">
                             {subItem.submenu.map((item, index) => {
