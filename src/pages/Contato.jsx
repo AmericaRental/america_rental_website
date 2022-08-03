@@ -130,13 +130,24 @@ const Textarea = styled.textarea`
   resize: vertical;
 `;
 
+const SendMail = (nome, email, telefone, cliente, mensagem) => {
+  console.log(`${nome} - ${email} - ${telefone} - ${cliente} - ${mensagem}`);
+  useEffect(() => {
+    api.post("/send", {
+      subject: `América rental - formulário de contato, cliente "${nome} - ${cliente}"`,
+      message: `<p>${mensagem}<p><br/><br/>Telefone - ${telefone}`,
+      receivers: contato["muri157k@gmail.com"],
+    });
+  }, []);
+};
+
 function Contato() {
   const [border, setBorder] = useState("2px solid rgba(0, 0, 0, 0.51)");
   const [email, setEmail] = useState("");
   const [nome, setNome] = useState("");
   const [cliente, setCliente] = useState("");
   const [telefone, setTelefone] = useState("");
-  const [mensagem, setMensagem] = useState("second");
+  const [mensagem, setMensagem] = useState("");
 
   const emailValidator = new RegExp(
     "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,63}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
@@ -151,8 +162,6 @@ function Contato() {
         ? setBorder("2px solid rgba(0, 0, 0, 1)")
         : setBorder("2px solid rgba(0, 0, 0, 0.51)");
     }
-    console.log(`length -> ${email.length}`);
-    console.log(`after -> ${border}`);
   };
   return (
     <>
@@ -184,7 +193,9 @@ function Contato() {
                 alt="cliente"
                 inputMode="text"
                 border={"2px solid rgba(0, 0, 0, 0.51)"}
-                onChange={(c) => {setCliente(c)}}
+                onChange={(c) => {
+                  setCliente(c.target.value);
+                }}
               />
             </FrmContainer>
 
@@ -194,7 +205,9 @@ function Contato() {
                 alt="nome completo"
                 inputMode="text"
                 border="2px solid rgba(0, 0, 0, 0.51)"
-                onChange={(n) => {setNome(n)}}
+                onChange={(n) => {
+                  setNome(n.target.value);
+                }}
               />
             </FrmContainer>
 
@@ -205,9 +218,8 @@ function Contato() {
                 inputMode="text"
                 border={border}
                 onChange={(e) => {
-                  emailValidatorFn(e);
-                  setEmail(e)
-                  console.log(e);
+                  emailValidatorFn(e.target.value);
+                  setEmail(e.target.value);
                 }}
               />
             </FrmContainer>
@@ -218,10 +230,11 @@ function Contato() {
                 alt="Telefone"
                 inputMode="text"
                 border="2px solid rgba(0, 0, 0, 0.51)"
-                onChange={(t) => {setTelefone(t)}}
+                onChange={(t) => {
+                  setTelefone(t.target.value);
+                }}
               />
             </FrmContainer>
-
 
             <FrmContainer>
               <P>Mensagem</P>
@@ -229,21 +242,30 @@ function Contato() {
                 alt="Mensagem"
                 inputMode="text"
                 border="2px solid rgba(0, 0, 0, 0.51)"
-                onChange={(t) => {setTelefone(t)}}
+                onChange={(m) => {
+                  setMensagem(m.target.value);
+                }}
               />
             </FrmContainer>
-
-            
           </Form>
           <Button
-              onClick={useEffect(() => {
-                api.post("/send", {
+            onClick={() =>
+              api
+                .post("/send", {
                   subject: `América rental - formulário de contato, cliente "${nome} - ${cliente}"`,
-                  message: `<p>${mensagem}<p><br/><br/>Telefone - ${telefone}`,
-                  receivers: contato["muri157k@gmail.com"],
-                });
-              }, [])}
-            >Enviar</Button>
+
+                  message: `${mensagem}
+                  
+                  responder para - ${email}
+                  ou ligar para - ${telefone}
+                  `,
+                  receivers: ["muri157k@gmail.com","cardoso.murilo2002@gmail.com"],
+                })
+                .then(() => console.log("enviado com sucesso"))
+            }
+          >
+            Enviar
+          </Button>
         </Container>
       </main>
       <Footer />
