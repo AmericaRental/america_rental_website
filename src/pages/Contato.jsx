@@ -1,37 +1,36 @@
 import React, { useState } from "react";
-
+import { FiPhoneCall } from "react-icons/fi";
+import { ImWhatsapp } from "react-icons/im";
 import Header from "../components/global/header";
 import Footer from "../components/global/footer";
 import styled from "styled-components";
 
-import contato from "../images/contato.svg";
+import contato from "../images/contato.webp";
 import WhatsappButton from "../components/global/whatsapp_button";
-
 import api from "../api/axios";
+
+import emailIcon from "../images/email.svg";
 
 const Banner = styled.div`
   width: 100%;
   position: initial;
-  height: 50vh;
+  height: auto;
   display: flex;
   justify-content: left;
   align-items: center;
+  min-height: 90px;
   @media (max-width: 1000px) {
-    height: 11vh;
-    margin-bottom: 2%;
+    height: 5vh;
   }
 `;
 
 const BannerImg = styled.img`
   width: ${(props) => props.width || "100%"};
-  height: auto;
-  z-index: ${(props) => props.zindex || "-1"};
-  left: 0;
-  top: 120px;
-  position: ${(props) => props.position || "absolute"};
+  height: 100%;
+  object-fit: cover;
   margin: ${(props) => props.margin || "0 0 0 0"};
   @media (max-width: 1000px) {
-    top: 9.7%;
+    object-fit: cover;
   }
 `;
 
@@ -51,43 +50,52 @@ const Title = styled.h1`
 `;
 
 const Container = styled.section`
-  width: 60vw;
+  background-color: ${(props) => props.bg || "#FFF"};
+  width: 50%;
   height: auto;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 5% auto;
+  padding: 20px 0%;
   @media (max-width: 1000px) {
-    width: 80vw;
+    width: 100vw;
   }
 `;
 
 const H1 = styled.h1`
   text-align: center;
   font-family: "DM Sans";
-  font-size: 1.237rem;
+  font-size: 1.4rem;
 `;
 
 const Button = styled.button`
   width: auto;
   margin: 15px auto;
-  padding: 10px 15px;
-  border: 3.5px solid #1d436b;
-  background-color: #fff;
-  border-radius: 20px;
+  padding: 4px 35px;
+  border: 3px solid #1d436b;
+  background-color: transparent;
+  border-radius: 30px;
   font-size: 1.2rem;
   color: #1d436b;
+  background-color: #f2f2f2;
   font-family: "Montserrat";
+  transition: 0.2s ease-in-out;
+  :hover {
+    transition: 0.2s ease-in-out;
+    box-shadow: 0 0 5px 0 #00000076;
+  }
 `;
 
 const Form = styled.section`
-  width: 80%;
+  width: 60%;
   display: flex;
-  flex-wrap: wrap;
-  flex-basis: 50%;
+  flex-direction: column;
   margin: auto;
+  @media (max-width: 1000px) {
+    width: 85%;
+  }
 `;
 
 const Input = styled.input`
@@ -96,6 +104,7 @@ const Input = styled.input`
   padding: 0.6rem 1rem;
   transition: 0.5s ease-in-out;
   font-family: "Montserrat";
+  background-color: transparent;
   outline: none;
   font-size: 1rem;
   margin: 0 10px;
@@ -103,8 +112,11 @@ const Input = styled.input`
 
 const P = styled.p`
   font-family: "Inter";
-  font-size: 1rem;
+  font-size: ${(props) => props.size || "1rem"};
   margin: 5px 0px 5px 10px;
+  align-items: center;
+  display: flex;
+  color: ${(props) => props.color || "#000"};
 `;
 
 const FrmContainer = styled.article`
@@ -122,6 +134,7 @@ const Textarea = styled.textarea`
   padding: 0.6rem 1rem;
   transition: 0.5s ease-in-out;
   font-family: "Montserrat";
+  background-color: transparent;
   outline: none;
   font-size: 1rem;
   margin: 0 10px;
@@ -129,11 +142,41 @@ const Textarea = styled.textarea`
   resize: vertical;
 `;
 
+const Line = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+const InformationsContainer = styled.section`
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  font-size: "Inter";
+  background-color: #143753;
+`;
+
+const InformationItem = styled.div`
+  width: ${props => props.width || '50%'};
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+`;
+
+const Main = styled.main`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+`;
+
 function Contato() {
   const [border, setBorder] = useState("2px solid rgba(0, 0, 0, 0.51)");
   const [email, setEmail] = useState("");
   const [nome, setNome] = useState("");
-  const [cliente, setCliente] = useState("");
   const [telefone, setTelefone] = useState("");
   const [mensagem, setMensagem] = useState("");
 
@@ -154,47 +197,25 @@ function Contato() {
   return (
     <>
       <Header />
-
-      <main>
-        <WhatsappButton />
-        <Banner>
-          <BannerImg src={contato} alt="banner" />
-          <Title
-            margin={"0 0px 0 2%"}
-            size={"3.5rem"}
-            width={"40%"}
-            family={"Montserrat"}
-          >
-            Entre em contato
-          </Title>
-        </Banner>
-
-        <Container>
+      <WhatsappButton />
+      <Banner>
+        <BannerImg src={contato} alt="banner" />
+      </Banner>
+      <Main>
+        <Container bg="#f2f2f2">
           <H1>
             Para qualquer informação, dúvida ou comentário preencha o formulário
             abaixo
           </H1>
           <Form>
             <FrmContainer>
-              <P>Cliente</P>
+              <P>Nome</P>
               <Input
                 alt="cliente"
                 inputMode="text"
                 border={"2px solid rgba(0, 0, 0, 0.51)"}
                 onChange={(c) => {
-                  setCliente(c.target.value);
-                }}
-              />
-            </FrmContainer>
-
-            <FrmContainer>
-              <P>Nome completo</P>
-              <Input
-                alt="nome completo"
-                inputMode="text"
-                border="2px solid rgba(0, 0, 0, 0.51)"
-                onChange={(n) => {
-                  setNome(n.target.value);
+                  setNome(c.target.value);
                 }}
               />
             </FrmContainer>
@@ -240,26 +261,50 @@ function Contato() {
             onClick={() =>
               api
                 .post("/send", {
-                  subject: `América rental - formulário de contato, cliente "${nome} - ${cliente}"`,
+                  subject: `América rental - formulário de contato, cliente "${nome}"`,
 
                   message: `${mensagem}
                   
                   responder para - ${email}
                   ou ligar para - ${telefone}
                   `,
-                  receivers: [
-                    "muri157k@gmail.com",
-                    "cardoso.murilo2002@gmail.com",
-                  ],
+                  receivers: ["contato@americarental.com"],
                 })
-                .then(_ => alert("E-mail enviado com sucesso!"))
+                .then((_) => alert("E-mail enviado com sucesso!"))
                 .catch((e) => alert(e.target.value))
             }
           >
             Enviar
           </Button>
         </Container>
-      </main>
+
+        <Container>
+          <Title size="2rem" color="#143753" weight="600" margin="0 auto">
+            Informações de Contato
+          </Title>
+          <Line>
+            <img src={emailIcon} alt="icone de email" />
+            <P>contato@americarental.com.br</P>
+          </Line>
+
+          <InformationsContainer>
+            <Line>
+              <InformationItem>
+                <ImWhatsapp color="#fff" size={"50px"} />
+                <P size="1.5rem" color="#fafafa">
+                  11 9 9104-2685
+                </P>
+              </InformationItem>
+              <InformationItem>
+                <FiPhoneCall color="#fff" size={"50px"} />
+                <P size="1.5rem" color="#fafafa">
+                  11 2499-3353
+                </P>
+              </InformationItem>
+            </Line>
+          </InformationsContainer>
+        </Container>
+      </Main>
       <Footer />
     </>
   );
