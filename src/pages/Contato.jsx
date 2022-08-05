@@ -10,6 +10,7 @@ import contato from "../images/contato.webp";
 import WhatsappButton from "../components/global/whatsapp_button";
 import api from "../api/axios";
 import "../css/contato.css";
+
 const Banner = styled.div`
   width: 100%;
   position: initial;
