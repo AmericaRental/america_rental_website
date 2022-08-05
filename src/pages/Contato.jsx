@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import { FiPhoneCall } from "react-icons/fi";
 import { ImWhatsapp } from "react-icons/im";
+import { AiOutlineMail } from "react-icons/ai";
 import Header from "../components/global/header";
 import Footer from "../components/global/footer";
 import styled from "styled-components";
-
+import location from '../images/location.png';
 import contato from "../images/contato.webp";
 import WhatsappButton from "../components/global/whatsapp_button";
 import api from "../api/axios";
-
-import emailIcon from "../images/email.svg";
-
+import "../css/contato.css";
 const Banner = styled.div`
   width: 100%;
   position: initial;
@@ -111,12 +110,14 @@ const Input = styled.input`
 `;
 
 const P = styled.p`
-  font-family: "Inter";
+  font-family: ${(props) => props.family || "Inter"};
   font-size: ${(props) => props.size || "1rem"};
-  margin: 5px 0px 5px 10px;
+  margin: ${(props) => props.margin || "5px 0px 5px 10px"};
+  letter-spacing: ${(props) => props.spacing || "0px"};
   align-items: center;
   display: flex;
   color: ${(props) => props.color || "#000"};
+  font-weight: 400;
 `;
 
 const FrmContainer = styled.article`
@@ -146,20 +147,23 @@ const Line = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: ${(props) => props.justify || "space-between"};
+  margin: ${(props) => props.margin || "0"};
 `;
 
 const InformationsContainer = styled.section`
   width: 100%;
   height: auto;
   display: flex;
+  flex-direction: column;
   align-items: center;
   font-size: "Inter";
   background-color: #143753;
+  padding: 15px 0;
 `;
 
 const InformationItem = styled.div`
-  width: ${props => props.width || '50%'};
+  width: ${(props) => props.width || "50%"};
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -172,6 +176,13 @@ const Main = styled.main`
   display: flex;
   flex-direction: row;
 `;
+
+const Img = styled.img `
+  margin: 10px auto;
+  width: ${props => props.width || '80%'};
+  height: ${props => props.height || '400px'};
+  object-fit: cover;
+`
 
 function Contato() {
   const [border, setBorder] = useState("2px solid rgba(0, 0, 0, 0.51)");
@@ -282,27 +293,54 @@ function Contato() {
           <Title size="2rem" color="#143753" weight="600" margin="0 auto">
             Informações de Contato
           </Title>
-          <Line>
-            <img src={emailIcon} alt="icone de email" />
-            <P>contato@americarental.com.br</P>
+          <Line justify="center">
+            <AiOutlineMail color="#143753" className="contactsIcon" />
+            <P color="#686868" size="1.4rem">
+              contato@americarental.com.br
+            </P>
           </Line>
 
           <InformationsContainer>
             <Line>
               <InformationItem>
-                <ImWhatsapp color="#fff" size={"50px"} />
+                <ImWhatsapp
+                  color="#fff"
+                  size={"50px"}
+                  className="contactsIcon"
+                />
                 <P size="1.5rem" color="#fafafa">
                   11 9 9104-2685
                 </P>
               </InformationItem>
               <InformationItem>
-                <FiPhoneCall color="#fff" size={"50px"} />
+                <FiPhoneCall
+                  color="#fff"
+                  size={"50px"}
+                  className="contactsIcon"
+                />
                 <P size="1.5rem" color="#fafafa">
                   11 2499-3353
                 </P>
               </InformationItem>
             </Line>
+            <Line>
+              <Title size="1.8rem" margin="10px auto" weight="bold">
+                Horário de Atendimento
+              </Title>
+            </Line>
+            <Line>
+              <P
+                spacing="3px"
+                family="Open Sans"
+                size="1.5rem"
+                margin="5px auto"
+                color="white"
+              >
+                Segunda à Sexta das 08h as 17h30
+              </P>
+            </Line>
           </InformationsContainer>
+          <Img src={location}/>
         </Container>
       </Main>
       <Footer />
