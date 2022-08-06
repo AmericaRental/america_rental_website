@@ -30,8 +30,7 @@ const AppRoutes = (_) => {
           element={<ExtraLuxo />}
         />
         <reactRouter.Route path="/produtos/quimicos/luxo" element={<Luxo />} />
-        <reactRouter.Route path="/produtos/quimicos/pne" element={<PNE />} /> 
-
+        <reactRouter.Route path="/produtos/quimicos/pne" element={<PNE />} />
         <reactRouter.Route
           path="/produtos/quimicos/standard"
           element={<Standard />}
