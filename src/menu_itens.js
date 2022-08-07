@@ -20,53 +20,60 @@ export const menuItems = [
     submenu: [
       {
         title: "Sanitário Químico",
-        url: "/produtos/quimicos",
+        url: "/quimicos",
         submenu: [
           {
             title: "Modelo Standard",
-            url: "/produtos/quimicos/standard",
+            url: "../produtos/quimicos/standard",
           },
           {
             title: "Modelo Luxo",
-            url: "/produtos/quimicos/luxo",
+            url: "../produtos/quimicos/luxo",
           },
           {
             title: "Modelo Extra Luxo",
-            url: "/produtos/quimicos/extraluxo",
+            url: "../produtos/quimicos/extraluxo",
           },
           {
             title: "Modelo PNE",
-            url: "/produtos/quimicos/pne",
+            url: "../produtos/quimicos/pne",
           },
         ],
       },
       {
         title: "Cabines Hidráulicas",
-        url: "/produtos/hidraulicos",
+        url: "/hidraulicos",
         submenu: [
-          { title: "Modelo Convencional", url: "/" },
-          { title: "Chuveiro Portátil", url: "/" },
+          {
+            title: "Modelo Convencional",
+            url: "/produtos/hidraulicos/convencional",
+          },
+
+          {
+            title: "Chuveiro Portátil",
+            url: "/produtos/hidraulicos/chuveiro",
+          },
         ],
       },
       {
         title: "Pia Portátil",
-        url: "/produtos/pia",
+        url: "../pia",
+        submenu: null,
       },
       {
         title: "Mictório Kros",
-        url: "/",
-      },
-      {
-        title: "Guaritas",
-        url: "/",
+        url: "../kros",
+        submenu: null,
       },
       {
         title: "Bilheteria Individual",
-        url: "/produtos/bilheteria_individual",
+        url: "../bilheteria_individual",
+        submenu: null,
       },
       {
         title: "Bilheteria Dupla",
-        url: "/produtos/bilheteria_dupla",
+        url: "../bilheteria_dupla",
+        submenu: null,
       },
     ],
   },

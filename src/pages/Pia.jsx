@@ -45,7 +45,7 @@ function Pia() {
     text-transform: uppercase;
   `;
   const Main = styled.main`
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     margin: 0 auto;

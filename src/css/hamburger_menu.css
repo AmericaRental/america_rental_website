@@ -91,14 +91,14 @@ input[type='checkbox']:checked ~ .bar:nth-of-type(3){
 }
 
 .ndMenu{
-    width: 60vw;
+    width: 65vw;
     margin-top: 20px;
     margin-left: 15px;
     list-style: none;
 }
 
 .rdMenu{ 
-    width: 60vw;
+    width: 65vw;
     margin-top: 20px;
     margin-bottom: 20px ;
     margin-left: 25px;
@@ -107,7 +107,7 @@ input[type='checkbox']:checked ~ .bar:nth-of-type(3){
 
 .link{
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #515151;
     transition: cubic-bezier(0.88, 0.15, 0.49, 1.05) 300ms;
 }
