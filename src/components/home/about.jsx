@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import funcionarios from "../../images/funcionarios.svg";
+import funcionarios from "../../images/funcionarios.png";
 
 function About() {
 

@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import vetor_logo_america_colorido from "../../images/vetor_logo_america_colorido.svg";
-import email from "../../images/email.svg";
-import facebook from "../../images/facebook.svg";
-import instagram from "../../images/instagram.svg";
-import linkedin from "../../images/linkedin.svg";
-import whatsapp from "../../images/whatsapp.svg";
+import email from "../../images/email.png";
+import facebook from "../../images/facebook.png";
+import instagram from "../../images/instagram.png";
+import linkedin from "../../images/linkedin.png";
+import whatsapp from "../../images/whatsapp.png";
 import { menuItems } from "../../menu_itens";
 
 import "../../css/navigation_style.css";

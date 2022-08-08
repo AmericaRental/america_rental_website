@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import wpp from "../../images/wpp.svg";
+import wpp from "../../images/wpp.png";
 
 const Float = styled.button`
   width: 60px;

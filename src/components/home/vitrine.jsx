@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-import standard from "../../images/standard.svg";
-import sanitario_hidraulico from '../../images/sanitario_hidraulico.svg';
-import chuveiro from '../../images/chuveiro.svg'
-import lavatorio from '../../images/lavatorio.svg';
-import kros from '../../images/kros.svg';
-import guarita from '../../images/guarita.svg';
+import standard from "../../images/standard.png";
+import sanitario_hidraulico from '../../images/sanitario_hidraulico.png';
+import chuveiro from '../../images/chuveiro.png'
+import lavatorio from '../../images/lavatorio.png';
+import kros from '../../images/kros.png';
+import guarita from '../../images/guarita.png';
 
 export default class Vitrine extends Component {
   render() {

@@ -10,7 +10,7 @@ import bubble1 from "../images/whoweare_images/bubble1.svg";
 import bubble2 from "../images/whoweare_images/bubble2.svg";
 import bubble3 from "../images/whoweare_images/bubble3.svg";
 
-import funcionarios from "../images/funcionarios.svg";
+import funcionarios from "../images/funcionarios.png";
 import WhatsappButton from "../components/global/whatsapp_button";
 
 const WhoWeAre = () => {
