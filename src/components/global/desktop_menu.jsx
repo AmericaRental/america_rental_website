@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Nav = styled.nav`
@@ -45,7 +45,6 @@ const Button = styled.button`
 `;
 
 function DesktopMenu(items) {
-  const navigate = useNavigate();
 
   return (
     <Nav
@@ -77,9 +76,9 @@ function DesktopMenu(items) {
           <ul>
             <li>
               <button className="nestedSubMenu">
-                <Link to="/quimicos">Sanitário Químico</Link>
+                <Link to="/quimicos" className="link">Sanitário Químico</Link>
                 <ul className="lastLevel">
-                  <li className="link">
+                  <li>
                     <Link
                       to="/quimicos/standard"
                       className="link"
@@ -115,18 +114,13 @@ function DesktopMenu(items) {
             </li>
             <li>
               <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  navigate("/hidraulicos", { replace: true });
-                }}
                 className="nestedSubMenu"
               >
-                Sanitário Hidráulico
+                <Link to="/hidraulicos" className="link">Cabines Hidráulicas</Link>
                 <ul className="lastLevel">
                   <li className="link">
                     <Link
                       to="/hidraulicos/convencional"
-                      replace="true"
                       className="link"
                     >
                       Modelo Convencional
@@ -135,7 +129,6 @@ function DesktopMenu(items) {
                   <li className="link">
                     <Link
                       to="/hidraulicos/chuveiro"
-                      replace="true"
                       className="link"
                     >
                       Chuveiro Portátil

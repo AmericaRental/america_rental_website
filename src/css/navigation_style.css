@@ -74,6 +74,7 @@
   transition: cubic-bezier(0.88, 0.15, 0.49, 1.05) 300ms;
   font-weight: 700;
   font-size: 1.2rem;
+  width: 220px;
 }
 
 .navlist li:hover > ul {
@@ -128,8 +129,8 @@
   top: 100%;
   list-style-type: none;
   margin: 0 0px 0 -70px;
-  padding: 20px 0;
-  width: 180px;
+  padding: 15px 0;
+  width: 210px;
   background-color: #fff;
 }
 

@@ -4,6 +4,8 @@ import BilherteriaInd from "./pages/Bilherteria_ind";
 import BilheteriaDupl from "./pages/Bilheteria_dupl";
 import Contato from "./pages/Contato";
 import Hidraulicos from "./pages/Hidraulicos";
+import Convencional from "./pages/hidraulicos/convencional";
+import Chuveiro from "./pages/hidraulicos/chuveiro";
 import Home from "./pages/home";
 import Kros from "./pages/Kros";
 import Orcamentos from "./pages/Orcamentos";
@@ -14,7 +16,6 @@ import Luxo from "./pages/quimicos/luxo";
 import PNE from "./pages/quimicos/pne";
 import Standard from "./pages/quimicos/stardard";
 import WhoWeAre from "./pages/WhoWeAre";
-import AppRoutes from "./router";
 
 function App() {
   return (
@@ -35,10 +36,9 @@ function App() {
 
         <Route path="quimicos" element={<Quimicos />} />
 
-        <Route path="hidraulicos" element={<Hidraulicos />}>
-          <Route path="convencional" element={<Hidraulicos />} />
-          <Route path="chuveiro" element={<Hidraulicos />} />
-        </Route>
+        <Route path="hidraulicos/convencional" element={<Convencional />} />
+        <Route path="hidraulicos/chuveiro" element={<Chuveiro />} />
+        <Route path="hidraulicos" element={<Hidraulicos />} />
 
         <Route path="bilheteria_individual" element={<BilherteriaInd />} />
         <Route path="bilheteria_dupla" element={<BilheteriaDupl />} />
