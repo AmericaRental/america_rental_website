@@ -27,15 +27,15 @@ import "../css/chemicals_banner_style.css";
 import WhatsappButton from "../components/global/whatsapp_button";
 function Hidraulicos() {
   const Main = styled.main`
-    width: 100vw;
+    width: 100%;
   `;
 
   const Banner = styled.img`
-    width: 100vw;
+    width: 100%;
   `;
 
   const Produtos = styled.section`
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: row;
     background-color: #dedede;
@@ -51,7 +51,7 @@ function Hidraulicos() {
   `;
 
   const Container = styled.section`
-    width: ${props => props.width || '80vw'};
+    width: ${(props) => props.width || "80vw"};
     display: flex;
     flex-direction: row;
     margin: 0 auto;
@@ -79,7 +79,6 @@ function Hidraulicos() {
     justify-content: center;
     display: flex;
     padding: 20px;
-
   `;
 
   return (
@@ -94,7 +93,7 @@ function Hidraulicos() {
         </Produtos>
 
         <Container>
-        <WhatsappButton />
+          <WhatsappButton />
 
           <Swiper
             autoHeight={true}
@@ -107,22 +106,22 @@ function Hidraulicos() {
             modules={[Autoplay]}
           >
             <SwiperSlide className="bannerSwipe">
-              <img src={step1} alt='step'/>
+              <img src={step1} alt="step" />
             </SwiperSlide>
             <SwiperSlide className="bannerSwipe">
-              <img src={step2} alt='step'/>
+              <img src={step2} alt="step" />
             </SwiperSlide>
             <SwiperSlide className="bannerSwipe">
-              <img src={step3} alt='step'/>
+              <img src={step3} alt="step" />
             </SwiperSlide>
             <SwiperSlide className="bannerSwipe">
-              <img src={step4} alt='step'/>
+              <img src={step4} alt="step" />
             </SwiperSlide>
             <SwiperSlide className="bannerSwipe">
-              <img src={step5} alt='step'/>
+              <img src={step5} alt="step" />
             </SwiperSlide>
             <SwiperSlide className="bannerSwipe">
-              <img src={step6} alt='step'/>
+              <img src={step6} alt="step" />
             </SwiperSlide>
           </Swiper>
 
@@ -142,25 +141,25 @@ function Hidraulicos() {
             ligação elétrica.
           </P>
         </Container>
-        <Container width='70vw'>
+        <Container width="70vw">
           <Grid>
             <GridItem>
-              <Img src={img1} width={'100%'}/>
+              <Img src={img1} width={"100%"} />
             </GridItem>
             <GridItem>
-              <Img src={img2} width={'100%'}/>
+              <Img src={img2} width={"100%"} />
             </GridItem>
             <GridItem>
-              <Img src={img3} width={'100%'}/>
+              <Img src={img3} width={"100%"} />
             </GridItem>
             <GridItem>
-              <Img src={img4} width={'100%'}/>
+              <Img src={img4} width={"100%"} />
             </GridItem>
             <GridItem>
-              <Img src={img5} width={'100%'}/>
+              <Img src={img5} width={"100%"} />
             </GridItem>
             <GridItem>
-              <Img src={img6} width={'100%'}/>
+              <Img src={img6} width={"100%"} />
             </GridItem>
           </Grid>
         </Container>

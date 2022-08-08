@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import vetor_logo_america_colorido from "../../images/vetor_logo_america_colorido.svg";
-import {ReactComponent as email} from "../../images/email.svg";
-import {ReactComponent as facebook} from "../../images/facebook.svg";
+import email from "../../images/email.svg";
+import facebook from "../../images/facebook.svg";
 import instagram from "../../images/instagram.svg";
 import linkedin from "../../images/linkedin.svg";
 import whatsapp from "../../images/whatsapp.svg";
-import { menuItems } from "../../menu_itens";
 
 import "../../css/navigation_style.css";
 import DesktopMenu from "./desktop_menu";
+import { menuItems } from "../../menu_itens";
 import useWindowChange from "./hooks/useWindowWidth";
 import SmallScreenMenu from "./small_screens_menu";
 // import HamburgerButton from "./hamburger_button";

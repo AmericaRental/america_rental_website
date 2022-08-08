@@ -14,7 +14,6 @@ import slide3 from "../../images/quimicos/extra_luxo/slide3.svg";
 import slide4 from "../../images/quimicos/extra_luxo/slide4.svg";
 import slide5 from "../../images/quimicos/extra_luxo/slide5.svg";
 
-
 const Banner = styled.div`
     width: 100%;
     position: initial;
@@ -95,7 +94,6 @@ const Banner = styled.div`
   `;
 
 function ExtraLuxo() {
-  
   return (
     <>
       <Header />
