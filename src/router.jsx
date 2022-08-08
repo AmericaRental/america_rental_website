@@ -1,4 +1,4 @@
-import * as reactRouter from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Home from "./pages/home";
 import WhoWeAre from "./pages/WhoWeAre";
@@ -20,42 +20,32 @@ import Orcamentos from "./pages/Orcamentos";
 
 const AppRoutes = (_) => {
   return (
-    <>
-      <reactRouter.Routes>
-        <reactRouter.Route exact path="/" element={<Home />} />
-        <reactRouter.Route exact path="/about" element={<WhoWeAre />} />
-        <reactRouter.Route path="/produtos/quimicos" element={<Quimicos />} />
-        <reactRouter.Route
-          path="/produtos/quimicos/extraluxo"
-          element={<ExtraLuxo />}
-        />
-        <reactRouter.Route path="/produtos/quimicos/luxo" element={<Luxo />} />
-        <reactRouter.Route path="/produtos/quimicos/pne" element={<PNE />} /> 
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
 
-        <reactRouter.Route
-          path="/produtos/quimicos/standard"
-          element={<Standard />}
-        />
-        <reactRouter.Route
-          path="/produtos/hidraulicos"
-          element={<Hidraulicos />}
-        />
-        <reactRouter.Route path="/produtos/pia" element={<Pia />} />
-        <reactRouter.Route path="/produtos/kros" element={<Kros />} />
-        <reactRouter.Route
-          path="/produtos/bilheteria_individual"
-          element={<BilherteriaInd />}
-        />
-        <reactRouter.Route
-          path="/produtos/bilheteria_dupla"
-          element={<BilheteriaDupl />}
-        />
+        <Route path="contato" element={<Contato />} />
+        <Route path="orcamento" element={<Orcamentos />} />
+        <Route path="about" element={<WhoWeAre />} />
 
-        <reactRouter.Route path="/contato" element={<Contato />} />
+        <Route path="quimicos/standard" element={<Standard />} />
+        <Route path="quimicos/luxo" element={<Luxo />} />
+        <Route path="quimicos/extraluxo" element={<ExtraLuxo />} />
+        <Route path="quimicos/pne" element={<PNE />} />
+        <Route path="pia" element={<Pia />} />
+        <Route path="kros" element={<Kros />} />
 
-        <reactRouter.Route path="/orcamento" element={<Orcamentos />} />
-      </reactRouter.Routes>
-    </>
+        <Route path="quimicos" element={<Quimicos />} />
+
+        <Route path="hidraulicos" element={<Hidraulicos />}>
+          <Route path="convencional" element={<Hidraulicos />} />
+          <Route path="chuveiro" element={<Hidraulicos />} />
+        </Route>
+
+        <Route path="bilheteria_individual" element={<BilherteriaInd />} />
+        <Route path="bilheteria_dupla" element={<BilheteriaDupl />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
