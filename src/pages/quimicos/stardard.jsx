@@ -31,6 +31,7 @@ const Img = styled.img`
   filter: ${(props) => props.filter || "none"};
   z-index: 2;
   @media (max-width: 1000px) {
+    width: ${(props) => props.mWidth || "100%"};
     margin: ${(props) => props.mMargin || "0"};
   }
 `;
@@ -128,6 +129,7 @@ function Standard() {
                 src={standard}
                 alt="cabine standard"
                 width={"30%"}
+                mWidth={"30%"}
                 margin="-2% 0 2% 0"
                 mMargin="0px 0 10px 20px"
               />
@@ -157,15 +159,22 @@ function Standard() {
               size="1.25rem"
               mSize="1.33rem"
             >
-              <strong>As cabines de modelos Standard são as mais simples.</strong> Sendo o modelo
-              de entrada,<strong>{" "}normalmente usada para obras{" "}</strong>em geral, não possuem
-              descarga.<br/> Contém um produto químico de tonalidade azul escuro, que
+              <strong>
+                As cabines de modelos Standard são as mais simples.
+              </strong>{" "}
+              Sendo o modelo de entrada,
+              <strong> normalmente usada para obras </strong>em geral, não
+              possuem descarga.
+              <br /> Contém um produto químico de tonalidade azul escuro, que
               inibe a visualização dos resíduos, sendo possível ver os resíduos
-              no interior do tanque.<br/> A <strong>quantidade de limpezas</strong> é determinada pela <strong>quantidade média de usuários</strong>, sendo o programa mínimo composto por
-              1 limpeza por semana, não podendo ser menos pois esta é a validade
-              do produto químico usado.<br/>Na manutenção é realizada a reposição
-              dos insumos, sucção do tanque e a limpeza e lavagem interna da
-              cabine.
+              no interior do tanque.
+              <br /> A <strong>quantidade de limpezas</strong> é determinada
+              pela <strong>quantidade média de usuários</strong>, sendo o
+              programa mínimo composto por 1 limpeza por semana, não podendo ser
+              menos pois esta é a validade do produto químico usado.
+              <br />
+              Na manutenção é realizada a reposição dos insumos, sucção do
+              tanque e a limpeza e lavagem interna da cabine.
             </P>
           </Container>
 
@@ -175,7 +184,7 @@ function Standard() {
                 Especificação do Produto
               </P>
             </Container>
-            <Container direction='column'>
+            <Container direction="column">
               <Img
                 src={standard2}
                 alt="cabine standard"
@@ -213,7 +222,6 @@ function Standard() {
           </Container>
 
           <TechnicalVisit />
-
         </Main>
       ) : (
         <Main>

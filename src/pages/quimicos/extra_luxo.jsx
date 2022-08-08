@@ -64,10 +64,13 @@ const Banner = styled.div`
     height: auto;
     display: flex;
     margin: ${(props) => props.margin || "0"};
-    flex-direction: ${(props) => props.direction || "row"};
     justify-content: ${(props) => props.jContent || "center"};
     align-items: ${(props) => props.itemsAlign || "center"};
     background-color: ${(props) => props.background || "transparent"};
+    @media (max-width: 1000px) {
+      flex-direction: ${(props) => props.mdirection || "row"};
+      
+    }
   `;
 
   const P = styled.p`

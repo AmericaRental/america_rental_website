@@ -20,3 +20,15 @@
 .swiper-button-prev .swiper-button-next{
     color: black;
 }
+
+@media screen and (max-width: 1280px) {
+    .swiperpia {
+      width: 100%;
+    }
+
+    .swiperSlideItem > img { 
+        width: 80%;
+        /* height: 450px; */
+        object-fit: cover;
+    }
+  }
